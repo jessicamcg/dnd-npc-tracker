@@ -1,4 +1,22 @@
-<<<<<<< HEAD
-=======
+const DM = require('./dm');
+const Character = require('./character');
+const Stats = require('./stats');
 
->>>>>>> 86514fc4dc348b7101899f18cd38225e2dab67b2
+DM.hasMany(Character, {
+    foreignKey: 'dm_id_fk',
+});
+
+Character.belongsTo(DM, {
+    foreignKey: 'dm_id_fk',
+})
+
+Character.hasOne(Stats, {
+    foreignKey: 'char_id_fk',
+    onDelete: 'CASCADE',
+});
+
+Stats.belongsTo(Character, {
+    foreignKey: 'char_id_fk',
+})
+
+module.exports = { DM, Character, Stats};
