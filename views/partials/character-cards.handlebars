@@ -1,0 +1,14 @@
+<div class="card" style="width: 18rem;">
+    <a href="/character/{{id}}" class="card-link">
+        <div class="card-body">
+            <h5 class="card-title">{{name}}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Race: {{race}}</h6>
+            <h6 class="card-subtitle mb-2 text-muted">Class: {{class}}</h6>
+            {{#if met_party}}
+                <p class="card-text">{{name}} has met the party.</p>
+            {{else}}
+                <p class="card-tex">{{name}} has not met the party.</p>
+            {{/if}}
+        </div>
+    </a>
+</div>
