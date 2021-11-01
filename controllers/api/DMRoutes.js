@@ -18,20 +18,20 @@ router.post('/', async (req, res) => {
       console.log(err);
       res.status(500).json(err);
     }
-  });
+});
   
-    router.post('/login', async (req, res) => {
+router.post('/login', async (req, res) => {
     try {
       const dbDMData = await DM.findOne({
         where: {
-          email: req.body.email,
+          username: req.body.username,
         },
       });
   
       if (!dbDMData) {
         res
           .status(400)
-          .json({ message: 'Incorrect email or password. Please try again!' });
+          .json({ message: 'Incorrect username or password. Please try again!' });
         return;
       }
   
@@ -55,9 +55,9 @@ router.post('/', async (req, res) => {
       console.log(err);
       res.status(500).json(err);
     }
-  });
+});
   
-  router.post('/logout', (req, res) => {
+router.post('/logout', (req, res) => {
     if (req.session.loggedIn) {
       req.session.destroy(() => {
         res.status(204).end();
@@ -65,6 +65,6 @@ router.post('/', async (req, res) => {
     } else {
       res.status(404).end();
     }
-  });
+});
 
 module.exports = router;
