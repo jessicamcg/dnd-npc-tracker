@@ -1,3 +1,4 @@
+
 const express = require('express');
 const session = require('express-session');
 const routes = require('./controllers');
@@ -28,3 +29,4 @@ app.use(routes);
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log('Now listening'));
 });
+
