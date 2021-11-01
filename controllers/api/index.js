@@ -1,7 +1,10 @@
 const router = require('express').Router();
+const DMRoutes = require('./DMRoutes');
+const characterRoutes = require('./characterRoutes');
+const statsRoutes = require('./statsRoutes');
 
-const userRoutes = require('./user-routes');
-
-router.use('/users', userRoutes);
+router.use('/DMs', DMRoutes);
+router.use('/character', characterRoutes);
+router.use('/stats', statsRoutes);
 
 module.exports = router;
