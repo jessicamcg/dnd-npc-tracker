@@ -5,7 +5,7 @@ router.post('/', async (req, res) => {
     try {
         router.get('/', async (req, res) => {
             const DMData = await DM.findOne({
-                
+                // need work
             })
         })
         const characterData = await Character.create({
