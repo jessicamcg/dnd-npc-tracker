@@ -7,7 +7,7 @@ DM.init(
     {
         id: {
             type: DataTypes.UUID,
-            defaultValue: Sequelize.UUIDV4, //check this
+            defaultValue: DataTypes.UUIDV4, 
             allowNull: false,
             primaryKey: true,
         },
