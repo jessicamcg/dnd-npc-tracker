@@ -19,6 +19,10 @@ Character.init(
                 key: 'id'
             }
         },
+        name: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
         race: {
             type: DataTypes.STRING,
             allowNull: false
