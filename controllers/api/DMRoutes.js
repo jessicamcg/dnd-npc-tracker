@@ -24,14 +24,14 @@ router.post('/login', async (req, res) => {
     try {
       const dbDMData = await DM.findOne({
         where: {
-          email: req.body.email,
+          username: req.body.username,
         },
       });
   
       if (!dbDMData) {
         res
           .status(400)
-          .json({ message: 'Incorrect email or password. Please try again!' });
+          .json({ message: 'Incorrect username or password. Please try again!' });
         return;
       }
   
