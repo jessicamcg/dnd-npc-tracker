@@ -1,3 +1,4 @@
+const modifierCalc = require("../../utils/helpers")
 const characterView = async (id) => {
     const characterName = document.querySelector("#character-name");
     const strength = document.querySelector("#strength");
