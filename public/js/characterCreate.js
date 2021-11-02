@@ -3,7 +3,7 @@ const characterCreate = async (event) => {
     const characterName = document
         .querySelector("#character-name")
         .value.trim();
-    const characterRace = document.querySelector("#race-select").value.trim();
+    const characterRace = document.querySelector("#race-select");
     const characterMetParty = document.querySelector("#character-met-party");
     const characterClass = document.querySelector("#character-class");
     const strength = document.querySelector("#strength");
@@ -12,9 +12,9 @@ const characterCreate = async (event) => {
     const intelligence = document.querySelector("#intelligence");
     const wisdom = document.querySelector("#wisdom");
     const charisma = document.querySelector("#charisma");
-    const notes = document.querySelector("#notes");
+    const notes = document.querySelector("#notes").value.trim();
 
-    if (characterName && characterRace && characterMetParty) {
+    if (characterName) {
         const response = await fetch("/api/character", {
             method: "POST",
             body: JSON.stringify({
