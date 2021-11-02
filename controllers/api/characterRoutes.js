@@ -5,6 +5,10 @@ const { Character, DM, Stats } = require('../../models');
 
 router.post('/', async (req, res) => {
     try {
+        let metParty = false;
+        if (req.body.characterMetParty == 'Yes') {
+            metParty = true;
+        } 
 
         const characterData = await Character.create({
             dm_id_fk: req.session.dm_id,
@@ -12,6 +16,7 @@ router.post('/', async (req, res) => {
             race: req.body.race,
             class: req.body.class,
             notes: req.body.notes,
+            met_party: metParty
         });
 
         const statsData = await Stats.create({
@@ -26,7 +31,7 @@ router.post('/', async (req, res) => {
 
         const characterSheet = await Character.findAll({
             include: [{ model: Stats }]
-          })
+        })
 
         res.status(200).json(characterSheet);
     } catch (err) {
