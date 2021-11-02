@@ -10,6 +10,7 @@ router.post('/', async (req, res) => {
       });
   
       req.session.save(() => {
+        req.session.dm_id = dbDMData.id;
         req.session.loggedIn = true;
   
         res.status(200).json(dbDMData);
@@ -40,11 +41,12 @@ router.post('/login', async (req, res) => {
       if (!validPassword) {
         res
           .status(400)
-          .json({ message: 'Incorrect email or password. Please try again!' });
+          .json({ message: 'Incorrect username or password. Please try again!' });
         return;
       }
   
       req.session.save(() => {
+        req.session.dm_id = dbDMData.id;
         req.session.loggedIn = true;
   
         res
