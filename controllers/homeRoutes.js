@@ -24,6 +24,12 @@ router.get('/', async (req, res) => {
     }
 });
 
+router.get('/character/:id', async (req, res) => {
+  res.render('character-sheet', {
+    loggedIn: req.session.loggedIn,
+  });
+})
+
 router.get('/character-create', (req,res) =>{
   if (!req.session.loggedIn) {
     res.redirect('/');
