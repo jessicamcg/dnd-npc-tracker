@@ -32,7 +32,7 @@ router.get('/character/:id', async (req, res) => {
 
 router.get('/character-create', (req,res) =>{
   if (!req.session.loggedIn) {
-    res.redirect('/');
+    res.redirect('/login');
     return;
   }
 
