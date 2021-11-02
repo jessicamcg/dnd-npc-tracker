@@ -1,6 +1,5 @@
 const characterCreate = async (event) => {
     event.preventDefault();
-    // console.log('click');
     const characterName = document.querySelector("#character-name").value.trim();
     const characterRace = document.querySelector("#race-select").value.trim();
     const characterMetParty = document.querySelector("#character-met-party").value.trim();
@@ -11,7 +10,6 @@ const characterCreate = async (event) => {
     const intelligence = document.querySelector("#intelligence").value.trim();
     const wisdom = document.querySelector("#wisdom").value.trim();
     const charisma = document.querySelector("#charisma").value.trim();
-
     const notes = document.querySelector("#notes").value.trim();
 
     if (characterName) {
