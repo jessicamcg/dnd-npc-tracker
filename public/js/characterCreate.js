@@ -1,17 +1,15 @@
 const characterCreate = async (event) => {
     event.preventDefault();
-    const characterName = document
-        .querySelector("#character-name")
-        .value.trim();
-    const characterRace = document.querySelector("#race-select");
-    const characterMetParty = document.querySelector("#character-met-party");
-    const characterClass = document.querySelector("#character-class");
-    const strength = document.querySelector("#strength");
-    const dexterity = document.querySelector("#dexterity");
-    const constitution = document.querySelector("#constitution");
-    const intelligence = document.querySelector("#intelligence");
-    const wisdom = document.querySelector("#wisdom");
-    const charisma = document.querySelector("#charisma");
+    const characterName = document.querySelector("#character-name").value.trim();
+    const characterRace = document.querySelector("#race-select").value.trim();
+    const characterMetParty = document.querySelector("#character-met-party").value.trim();
+    const characterClass = document.querySelector("#character-class").value.trim();
+    const strength = document.querySelector("#strength").value.trim();
+    const dexterity = document.querySelector("#dexterity").value.trim();
+    const constitution = document.querySelector("#constitution").value.trim();
+    const intelligence = document.querySelector("#intelligence").value.trim();
+    const wisdom = document.querySelector("#wisdom").value.trim();
+    const charisma = document.querySelector("#charisma").value.trim();
     const notes = document.querySelector("#notes").value.trim();
 
     if (characterName) {
