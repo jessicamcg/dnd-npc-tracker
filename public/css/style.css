@@ -6,4 +6,49 @@
     --light: #e3e4e3;
     --dark: #182c23;
 }
+header {
+    padding-bottom: 40px;
+    text-align: center;
+    /* background: var(--dark);
+    color: var(--light); */
+}
 
+main {
+    display: flex;
+    flex-wrap: wrap;
+    flex-grow: 1;
+}
+
+aside {
+    flex: 0;
+    padding: 10px;
+    text-align: left;
+    margin-right: 100px;
+}
+
+h2 {
+    font-size: 20px;
+}
+
+.btn-no-style {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 100%;
+    transition: color 0.1s;
+    margin-left: 16px;
+}
+
+.login-card {
+    margin: 0 auto;
+    padding: 5px;
+    border-radius: var(--border-radius);
+    background-color: var(--light);
+    color: var(--dark);
+}
+
+.card {
+    margin: 20px;
+}
