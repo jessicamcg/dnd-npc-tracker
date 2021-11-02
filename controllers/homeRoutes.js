@@ -13,7 +13,12 @@ router.get('/', async (req, res) => {
 });
 
 router.get('/character-create', (req,res) =>{
+  if (!req.session.loggedIn) {
+    res.redirect('/');
+    return;
+  }
 
+  res.render('character-create');
 })
 
 router.get('/login', (req, res) => {

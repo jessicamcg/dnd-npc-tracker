@@ -5,6 +5,7 @@ const { Character, DM, Stats } = require('../../models');
 
 router.post('/', async (req, res) => {
     try {
+        console.log(req.body);
         let metParty = false;
         if (req.body.characterMetParty == 'Yes') {
             metParty = true;
@@ -12,9 +13,9 @@ router.post('/', async (req, res) => {
 
         const characterData = await Character.create({
             dm_id_fk: req.session.dm_id,
-            name: req.body.name,
-            race: req.body.race,
-            class: req.body.class,
+            name: req.body.characterName,
+            race: req.body.characterRace,
+            class: req.body.characterClass,
             notes: req.body.notes,
             met_party: metParty
         });
@@ -28,11 +29,12 @@ router.post('/', async (req, res) => {
             wisdom: req.body.wisdom,
             charisma: req.body.charisma
         })
-
+        console.log(characterData);
+        console.log(statsData);
         const characterSheet = await Character.findAll({
             include: [{ model: Stats }]
         })
-
+        console.log(characterSheet);
         res.status(200).json(characterSheet);
     } catch (err) {
       res.status(500).json(err);
@@ -70,6 +72,7 @@ router.get('/:id', async (req, res) => {
           characters,
           loggedIn: req.body.loggedIn
         })
+        res.status(200).json(characterSheet);
     } catch(err){
       res.status(400).json(err);
     }
