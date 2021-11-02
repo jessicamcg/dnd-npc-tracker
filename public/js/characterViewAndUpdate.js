@@ -10,10 +10,17 @@ const characterView = async (id) => {
 
     const response = await fetch(`/api/character/${id}`, {
         method: "GET",
+        headers: { "Content-Type": "application/json" },
     });
-    if (response) {
-        characterName.setAttribute("value", response.name);
-        switch (response.race) {
+
+    
+    const responseParsed = await response.json()
+    console.log(responseParsed);
+    console.log(characterName);
+    // console.log(responseParsed.class);
+    if (responseParsed) {
+        characterName.setAttribute("value", responseParsed.name);
+        switch (responseParsed.race) {
             case "Dragonborn":
                 const dragonborn = document.querySelector("#Dragonborn");
                 dragonborn.setAttribute("selected", "");
@@ -51,11 +58,11 @@ const characterView = async (id) => {
                 tiefling.setAttribute("selected", "");
                 break;
         }
-        if (response.met_party == true) {
+        if (responseParsed.met_party == true) {
             const yes = document.querySelector("#met-party_yes");
             yes.setAttribute("selected", "");
         }
-        switch (response.class) {
+        switch (responseParsed.class) {
             case "Barbarian":
                 const barbarian = document.querySelector("#Barbarian");
                 barbarian.setAttribute("selected", "");
@@ -109,13 +116,13 @@ const characterView = async (id) => {
                 noClass.setAttribute("selected", "");
                 break;
         }
-        notes.textContent = response.notes;
-        strength.setAttribute("value", response.stat.strength);
-        dexterity.setAttribute("value", response.stat.dexterity);
-        constitution.setAttribute("value", response.stat.constitution);
-        intelligence.setAttribute("value", response.stat.intelligence);
-        wisdom.setAttribute("value", response.stat.wisdom);
-        charisma.setAttribute("value", response.stat.charisma);
+        notes.textContent = responseParsed.notes;
+        strength.setAttribute("value", responseParsed.stat.strength);
+        dexterity.setAttribute("value", responseParsed.stat.dexterity);
+        constitution.setAttribute("value", responseParsed.stat.constitution);
+        intelligence.setAttribute("value", responseParsed.stat.intelligence);
+        wisdom.setAttribute("value", responseParsed.stat.wisdom);
+        charisma.setAttribute("value", responseParsed.stat.charisma);
     }
 };
 
