@@ -32,13 +32,15 @@ const characterCreate = async (event) => {
             }),
             headers: { "Content-Type": "application/json" },
         });
-        
+
         if (response.ok) {
-            document.location.replace('/')
+            document.location.replace("/");
         } else {
-            alert('Character creation failed')
+            alert("Character creation failed");
         }
     }
 };
 
-document.querySelector('#character-creation-form').addEventListener('submit', characterCreate)
+document
+    .querySelector("#character-creation-form")
+    .addEventListener("submit", characterCreate);
