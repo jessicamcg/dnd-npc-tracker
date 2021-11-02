@@ -1,7 +1,12 @@
-<form action="">
-    <input type="text" placeholder="Character Name" id="#character-name"/>
+<form action="#" id="character-creation-form">
+    <input
+        type="text"
+        placeholder="Character Name"
+        id="#character-name"
+        required
+    />
     <label for="race" name="race">Choose a race:</label>
-    <select name="" id="">
+    <select name="race_select" id="race-select" required>
         <option value="Dragonborn">Dragonborn</option>
         <option value="Dwarf">Dwarf</option>
         <option value="Elf">Elf</option>
@@ -13,46 +18,46 @@
         <option value="Tiefling">Tiefling</option>
     </select>
     <label for="met_party" name="met_party">Have they met the party yet?</label>
-    <select name="met_party" id="character-met-party">
+    <select name="met_party" id="character-met-party" required>
         <option value="Yes">Yes</option>
         <option value="No">No</option>
     </select>
     <label for="class" name="class">Choose a class:</label>
-    <select name="Class" id="character-class">
-        <option value="">Barbarian</option>
-        <option value="">Bard</option>
-        <option value="">Cleric</option>
-        <option value="">Druid</option>
-        <option value="">Fighter</option>
-        <option value="">Monk</option>
-        <option value="">Paladin</option>
-        <option value="">Ranger</option>
-        <option value="">Rogue</option>
-        <option value="">Sorceror</option>
-        <option value="">Warlock</option>
-        <option value="">Wizard</option>a
+    <select name="class" id="character-class">
+        <option value="Barbarian">Barbarian</option>
+        <option value="Bard">Bard</option>
+        <option value="Cleric">Cleric</option>
+        <option value="Druid">Druid</option>
+        <option value="Fighter">Fighter</option>
+        <option value="Monk">Monk</option>
+        <option value="Paladin">Paladin</option>
+        <option value="Ranger">Ranger</option>
+        <option value="Rogue">Rogue</option>
+        <option value="Sorceror">Sorceror</option>
+        <option value="Warlock">Warlock</option>
+        <option value="Wizard">Wizard</option>
     </select>
-    <input class="stats" id="strength" type="text" placeholder="strength" />
-    <input class="stats" id="dexterity" type="text" placeholder="dexterity" />
+    <input class="stats" id="strength" type="number" placeholder="strength" />
+    <input class="stats" id="dexterity" type="number" placeholder="dexterity" />
     <input
         class="stats"
         id="constitution"
-        type="text"
+        type="number"
         placeholder="constitution"
     />
     <input
         class="stats"
         id="intelligence"
-        type="text"
+        type="number"
         placeholder="intelligence"
     />
-    <input class="stats" id="wisdom" type="text" placeholder="wisdom" />
-    <input class="stats" id="charisma" type="text" placeholder="charisma" />
+    <input class="stats" id="wisdom" type="number" placeholder="wisdom" />
+    <input class="stats" id="charisma" type="number" placeholder="charisma" />
     <textarea
+        id="notes"
         class="form-input"
         type="text"
         placeholder="Write any relevant notes for your character here"
-        required
     ></textarea>
     <input type="submit" value="Create Character" />
 </form>
