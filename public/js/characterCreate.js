@@ -1,6 +1,5 @@
 const characterCreate = async (event) => {
     event.preventDefault();
-    // console.log('click');
     const characterName = document.querySelector("#character-name").value.trim();
     const characterRace = document.querySelector("#race-select").value.trim();
     const characterMetParty = document.querySelector("#character-met-party").value.trim();
@@ -13,7 +12,7 @@ const characterCreate = async (event) => {
     const charisma = document.querySelector("#charisma").value.trim();
     const notes = document.querySelector("#notes").value.trim();
 
-    if (characterName && characterRace && characterMetParty) {
+    if (characterName) {
         const response = await fetch("/api/character", {
             method: "POST",
             body: JSON.stringify({
