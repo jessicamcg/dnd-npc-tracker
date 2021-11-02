@@ -119,6 +119,11 @@ const characterView = async (id) => {
     }
 };
 
+const windowArr = window.location.pathname.split('/');
+const windowID = windowArr[windowArr.length-1]
+console.log(windowID);
+characterView(windowID);
+
 // const characterUpdate = async (event, id) => {
 //     event.preventDefault();
 //     const characterName = document

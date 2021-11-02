@@ -46,11 +46,11 @@ router.get('/:id', async (req, res) => {
       const characterSheet = await Character.findOne({
             where: {
                 id: req.params.id
-            }
-        },
-        {
+            },
+
             include: [{ model: Stats }]
-        })
+        });
+        
       if(!characterSheet){
         res.status(404).json({message: 'No character with that id'})
       }else{
