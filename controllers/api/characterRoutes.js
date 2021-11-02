@@ -52,16 +52,16 @@ router.get('/:id', async (req, res) => {
             include: [{ model: Stats }]
         })
       if(!characterSheet){
-        res.status(404).json({message: 'no character with that id'})
+        res.status(404).json({message: 'No character with that id'})
       }else{
         res.status(200).json(characterSheet);
       }
     } catch(err){
       res.status(400).json(err);
     }
-  });
-  
-  router.get('/', async (req, res) => {
+});
+
+router.get('/', async (req, res) => {
     try{
       const characterSheet = await Character.findAll({
         include: [{ model: Stats }]
@@ -76,6 +76,6 @@ router.get('/:id', async (req, res) => {
     } catch(err){
       res.status(400).json(err);
     }
-  });
+});
 
 module.exports = router;

@@ -11,9 +11,10 @@ const characterCreate = async (event) => {
     const intelligence = document.querySelector("#intelligence").value.trim();
     const wisdom = document.querySelector("#wisdom").value.trim();
     const charisma = document.querySelector("#charisma").value.trim();
+
     const notes = document.querySelector("#notes").value.trim();
 
-    if (characterName && characterRace && characterMetParty) {
+    if (characterName) {
         const response = await fetch("/api/character", {
             method: "POST",
             body: JSON.stringify({
