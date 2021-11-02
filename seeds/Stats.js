@@ -2,22 +2,47 @@ const { Stats } = require('../models');
 
 const statsData = [
   {
-    category_name: 'Shirts',
+    char_id_fk: '',
+    strength: 3,
+    dexterity: 1,
+    constitution: 20,
+    intelligence: 5,
+    charisma: 7,
   },
   {
-    category_name: 'Shorts',
+    char_id_fk: '',
+    strength: 5,
+    dexterity: 2,
+    constitution: 15,
+    intelligence: 3,
+    charisma: 2,
   },
   {
-    category_name: 'Music',
+    char_id_fk: '',
+    strength: 14,
+    dexterity: 12,
+    constitution: 8,
+    intelligence: 7,
+    charisma: 1,
   },
   {
-    category_name: 'Hats',
+    char_id_fk: '' ,
+    strength: 20,
+    dexterity: 6,
+    constitution: 2,
+    intelligence: 10,
+    charisma: 11,
   },
   {
-    category_name: 'Shoes',
+    char_id_fk: '',
+    strength: 12,
+    dexterity: 2,
+    constitution: 3,
+    intelligence: 13,
+    charisma: 17,
   },
 ];
 
 const seedStats = () => Stats.bulkCreate(statsData);
-
+seedStats();
 module.exports = seedStats;
