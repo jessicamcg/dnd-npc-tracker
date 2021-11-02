@@ -1,9 +1,21 @@
+const { Character,Stats,DM } = require('../models');
+
 const router = require('express').Router();
 
 router.get('/', async (req, res) => {
     try {
-  
+      const characterData = await Character.findAll({
+        // where: {
+        //   dm_id_fk: req.session.dm_id,
+        // },
+        // include: [{ model:Stats }]
+      });
+      const characters = characterData.map((character) => {
+        return character.get({ plain:true })
+      });
+
       res.render('homepage', {
+        characters,
         loggedIn: req.session.loggedIn,
       });
     } catch (err) {

@@ -1,6 +1,6 @@
 const characterCreate = async (event) => {
     event.preventDefault();
-    console.log('click');
+    // console.log('click');
     const characterName = document.querySelector("#character-name").value.trim();
     const characterRace = document.querySelector("#race-select").value.trim();
     const characterMetParty = document.querySelector("#character-met-party").value.trim();

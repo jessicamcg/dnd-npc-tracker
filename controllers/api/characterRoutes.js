@@ -5,7 +5,7 @@ const { Character, DM, Stats } = require('../../models');
 
 router.post('/', async (req, res) => {
     try {
-        console.log(req.body);
+        // console.log(req.body);
         let metParty = false;
         if (req.body.characterMetParty == 'Yes') {
             metParty = true;
@@ -29,8 +29,8 @@ router.post('/', async (req, res) => {
             wisdom: req.body.wisdom,
             charisma: req.body.charisma
         })
-        console.log(characterData);
-        console.log(statsData);
+        // console.log(characterData);
+        // console.log(statsData);
         const characterSheet = await Character.findAll({
             include: [{ model: Stats }]
         })
