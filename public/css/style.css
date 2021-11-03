@@ -6,7 +6,9 @@
     --light: #e3e4e3;
     --dark: #182c23;
 }
-
+.dice-roller {
+    padding-top:5rem;
+}
 body {
     background: url("../images/mtn-bg-1.jpg") no-repeat center center fixed;
     background-size: cover;
@@ -51,17 +53,27 @@ main {
     background-size: cover;
     min-width: 100vh;
     min-height: 100vh;
-    padding-top: 110px;
+    /* padding-top: ; */
 }
 
 aside {
-    flex: 0;
+    display: flex;
+    /* flex: 20px; */
     padding: 10px;
     text-align: left;
     margin-right: 100px;
+    border:#182c23 solid;
+    border-width: 10px;
+    
+}
+
+.character-gallery{
+    padding-top: 110px
 }
 
 h2 {
+    padding-top: 110px;
+    
     font-size: 20px;
 }
 
