@@ -21,10 +21,6 @@
     --dark-castle-army: url("https://cdn.discordapp.com/attachments/886473171631472690/905583732939956234/shutterstock_1735871231.jpg") no-repeat center center;
 }
 
-.dice-roller {
-    padding-top:5rem;
-}
-
 body {
     min-width: 100vh;
     min-height: 100vh;
@@ -76,7 +72,8 @@ aside {
     position: sticky !important;
     top: 20%;
     height: 100vh;
-    transform: translateY(20%)
+    transform: translateY(20%);
+    height: 500px;
 }
 
 .character-gallery{
@@ -84,7 +81,7 @@ aside {
     /* background: var(--mountain1);
     background-size: cover; */
     min-width: 100vh;
-    min-height: 100vh;
+    min-height: 120vh;
 
 }
 
@@ -150,8 +147,7 @@ button {
 }
 
 .menu-content {
-    background: white;
-    opacity: 0.5;
+    background: rgb(250, 247, 247, 0.5);
     height: 200px;
     width: 500px;
     padding: 70px;
