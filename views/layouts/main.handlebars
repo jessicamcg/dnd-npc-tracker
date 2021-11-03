@@ -1,49 +1,116 @@
-<!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DND Character Tracker</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel="stylesheet" type="text/css" href="/css/style.css">
-</head>
-
-<body>
-
-  <nav class="navbar navbar-expand-lg sticky-sm-top">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="/">DND Character Tracker</a>
-      <li class="nav-item">
-        <a class="nav-link" href="/character-create">Create a new character</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/my-characters">My characters</a>
-      </li>
-      {{#if loggedIn}}
-      <button id="logout" class="btn-no-style">Logout</button>
-      {{else}}
-      <li class="nav-item">
-        <a class="nav-link" href="/login">Login</a>
-      </li>
-      {{/if}}
-    </div>
-  </nav>
-
-  <main>
-    <aside>
-      <h2>aside placeholder</h2>
-    </aside>
-    <div class="character-gallery">
-      {{{body}}}
-    </div>
-  </main>
-  {{#if loggedIn}}
-  <script src="/js/logout.js"></script>
-  {{/if}}
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-</body>
-
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>DND Character Tracker</title>
+        <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+            crossorigin="anonymous"
+        />
+        <link rel="stylesheet" type="text/css" href="/css/style.css" />
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg sticky-sm-top">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/">DND Character Tracker</a>
+                <li class="nav-item">
+                    <a class="nav-link" href="/character-create">Create a new
+                        character</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/">My characters</a>
+                </li>
+                {{#if loggedIn}}
+                    <button id="logout" class="btn-no-style">Logout</button>
+                {{else}}
+                    <li class="nav-item">
+                        <a class="nav-link" href="/login">Login</a>
+                    </li>
+                {{/if}}
+            </div>
+            <!-- Button trigger modal -->
+            <button
+                type="button"
+                class="btn btn-primary"
+                data-toggle="modal"
+                data-target="#exampleModal"
+            >
+                Instructions
+            </button>
+            {{!-- instructions --}}
+        </nav>
+        <main>
+            <!-- Modal -->
+            <div
+                class="modal fade"
+                id="exampleModal"
+                tabindex="1"
+                role="dialog"
+                aria-labelledby="exampleModalLabel"
+                aria-hidden="true"
+            >
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Instructions for Character Creation</h5>
+                            <button
+                                type="button"
+                                class="close"
+                                data-dismiss="modal"
+                                aria-label="Close"
+                            >
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <p class='modal-body_welcome'>Welcome to our dnd character tracker built for DMs!</p> 
+                            <ol class="modal-body_ol">
+                              <li class="modal-body_list">Choose a character name, make sure you like it!</li>
+                              <li class="modal-body_list">Select a race from the dropdown menu. You can read more about the differences between them <a href="https://www.dndbeyond.com/races">here!</a></li>
+                              <li class="modal-body_list">Has your NPC character met the party yet?</li>
+                              <li class="modal-body_list">Select a class from the dropwdown menu. You can read more about the difference classes <a href="https://www.dndbeyond.com/classes">here!</a></li>
+                              <li class="modal-body_list">For your character stats, roll 4, 6 sided dice (4d6), remove the lowest value, and assign the total remaining into a stat of your choosing.</li>
+                              <li class="modal-body_list">Write any notes you want to keep track of for your character in the text area</li>
+                              <li class="modal-body_list">Press the create character button when finished!</li>
+                            </ol>
+                        </div>
+                        <div class="modal-footer">
+                            <button
+                                type="button"
+                                class="btn btn-secondary"
+                                data-dismiss="modal"
+                            >Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{!-- modal --}}
+            <aside>
+                <h2>aside placeholder</h2>
+            </aside>
+            <div class="character-gallery">
+                {{{body}}}
+            </div>
+        </main>
+        {{#if loggedIn}}
+            <script src="/js/logout.js"></script>
+        {{/if}}
+        <script
+            src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"
+        ></script>
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"
+        ></script>
+        <script
+            src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"
+        ></script>
+    </body>
 </html>
