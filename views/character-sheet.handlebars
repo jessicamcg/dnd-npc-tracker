@@ -1,12 +1,15 @@
 <div class="row justify-space-between-md">
     <div class="card">  
         <form action="#" id="character-view-form">
-            <input
+            <div class="form-group">
+                <label for="name" name="name">Character Name:</label>
+                <input
                 type="text"
                 placeholder="Character Name"
                 id="character-name"
                 required
-            />
+                />
+            </div>
             <label for="race" name="race">Race:</label>
             <select name="race_select" id="race-select" required>
                 <option value="Dragonborn" id="Dragonborn">Dragonborn</option>
@@ -95,9 +98,10 @@
                 type="text"
                 placeholder="Write any relevant notes for your character here"
             ></textarea>
-            <button class="btn" type="submit">Update Character</button>
+            <input type="submit" value="Update Character" />
         </form>
+
+
     </div>
 </div>
-
 <script src="/js/characterViewAndUpdate.js"></script>
