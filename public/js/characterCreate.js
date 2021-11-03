@@ -38,7 +38,11 @@ const characterCreate = async (event) => {
         }
     }
 };
-
+const characterStatRandomizer = async () => {
+    const response = await fetch('dice/4/6', {
+        method: "POST"
+    })
+}
 document
     .querySelector("#character-creation-form")
     .addEventListener("submit", characterCreate);
