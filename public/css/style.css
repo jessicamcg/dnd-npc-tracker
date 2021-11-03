@@ -72,8 +72,11 @@ aside {
     padding: 10px;
     text-align: left;
     /* margin-right: 100px; */
-    border-right: var(--dark) solid;
     border-width: 10px;
+    position: sticky !important;
+    top: 20%;
+    height: 100vh;
+    transform: translateY(20%)
 }
 
 .character-gallery{
@@ -147,12 +150,15 @@ button {
 
 #create-menu {
     background: var(--monk);
+    background-size: cover;
 }
 
 #view-menu {
     background: var(--bog-monster);
+    background-size: cover;
 }
 
 #login-menu {
     background: var(--green-castle);
+    background-size: cover;
 }
