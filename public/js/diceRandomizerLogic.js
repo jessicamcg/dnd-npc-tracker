@@ -17,22 +17,22 @@ const characterRandomizer = async () => {
             for (let k = 0; k < sortedArr.length; k++) {
                 sum = sum + sortedArr[k];
             }
+            statArr.push(sum);
         }
-        console.log("finalArr:", statArr);
-        const strength = document.querySelector("#strength");
-        const dexterity = document.querySelector("#dexterity");
-        const constitution = document.querySelector("#constitution");
-        const intelligence = document.querySelector("#intelligence");
-        const wisdom = document.querySelector("#wisdom");
-        const charisma = document.querySelector("#charisma");
-
-        strength.setAttribute("value", statArr[0]);
-        dexterity.setAttribute("value", statArr[1]);
-        constitution.setAttribute("value", statArr[2]);
-        intelligence.setAttribute("value", statArr[3]);
-        wisdom.setAttribute("value", statArr[4]);
-        charisma.setAttribute("value", statArr[5]);
     }
+    console.log("finalArr:", statArr);
+    const strength = document.querySelector("#strength");
+    const dexterity = document.querySelector("#dexterity");
+    const constitution = document.querySelector("#constitution");
+    const intelligence = document.querySelector("#intelligence");
+    const wisdom = document.querySelector("#wisdom");
+    const charisma = document.querySelector("#charisma");
+    strength.setAttribute("value", statArr[0]);
+    dexterity.setAttribute("value", statArr[1]);
+    constitution.setAttribute("value", statArr[2]);
+    intelligence.setAttribute("value", statArr[3]);
+    wisdom.setAttribute("value", statArr[4]);
+    charisma.setAttribute("value", statArr[5]);
 };
 document
     .querySelector(".character-creation-form_randomizer")
