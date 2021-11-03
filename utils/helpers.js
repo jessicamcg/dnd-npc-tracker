@@ -1,6 +1,7 @@
 const modifierCalc  = (number) => {
-    const modifier = (number-10)/2
-    return console.log(Math.floor(modifier))
+    const realNumber = parseInt(number)
+    const modifier = (realNumber-10)/2
+    return Math.floor(modifier).toString()
 }
 
 module.exports = modifierCalc
