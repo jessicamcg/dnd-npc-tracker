@@ -15,7 +15,10 @@
     <div class="container-fluid">
       <a class="navbar-brand" href="/">DND Character Tracker</a>
       <li class="nav-item">
-        <a class="nav-link" href="/">Home</a>
+        <a class="nav-link" href="/character-create">Create a new character</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/">My characters</a>
       </li>
       {{#if loggedIn}}
       <button id="logout" class="btn-no-style">Logout</button>
@@ -27,10 +30,9 @@
     </div>
   </nav>
 
-
   <main>
     <aside>
-      <h2><a href="/character-create">Create a new character</a></h2>
+      <h2>aside placeholder</h2>
     </aside>
     <div class="character-gallery">
       {{{body}}}
