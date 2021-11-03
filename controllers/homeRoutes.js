@@ -25,6 +25,11 @@ router.get('/', async (req, res) => {
 });
 
 router.get('/character/:id', async (req, res) => {
+  if (!req.session.loggedIn) {
+    res.redirect('/login');
+    return;
+  }
+
   res.render('character-sheet', {
     loggedIn: req.session.loggedIn,
   });
@@ -37,6 +42,33 @@ router.get('/character-create', (req,res) =>{
   }
 
   res.render('character-create');
+})
+
+router.get('/my-characters', async (req,res) =>{
+  if (!req.session.loggedIn) {
+    res.redirect('/login');
+    return;
+  }
+  try {
+    const characterData = await Character.findAll({
+      where: {
+        dm_id_fk: req.session.dm_id,
+      },
+      include: [{ model:Stats }]
+    });
+    
+    const characters = characterData.map((character) => {
+      return character.get({ plain:true })
+    });
+
+    res.render('my-characters', {
+      characters,
+      loggedIn: req.session.loggedIn,
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
 })
 
 router.get('/login', (req, res) => {
