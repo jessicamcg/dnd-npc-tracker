@@ -1,12 +1,8 @@
-<<<<<<< HEAD
-const modifierCalc = require('../../utils/helpers');
-=======
 const modifierCalc = (numStr) => {
     const realNumber = parseInt(numStr);
     const modifier = (realNumber - 10) / 2;
     return Math.floor(modifier).toString();
 };
->>>>>>> main
 const characterView = async (id) => {
     const characterName = document.querySelector("#character-name");
     const strength = document.querySelector("#strength");
@@ -55,13 +51,8 @@ const characterView = async (id) => {
                 halfElf.setAttribute("selected", "");
                 break;
             case "Halfling":
-<<<<<<< HEAD
-                const halfing = document.querySelector("#Halfling");
-                halfing.setAttribute("selected", "");
-=======
                 const halfling = document.querySelector("#Halfling");
                 halfling.setAttribute("selected", "");
->>>>>>> main
                 break;
             case "Half-Orc":
                 const halfOrc = document.querySelector("#Half-Orc");

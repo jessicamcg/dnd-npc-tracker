@@ -32,17 +32,22 @@
 
   <main>
     <aside>
-      <h2>
-      <label class="dice-scroll-down">Pick a dice</label>
-      <select>
-        <option value="Barbarian">D20</option>
-        <option value="Bard">D12</option>
-        <option value="Cleric">D10</option>
-        <option value="Druid">D8</option>
-        <option value="Fighter">D6</option>
-        <option value="Monk">D4</option>
-        </h2>
+      <div class='dice-roller'>
+      <label class="dice-scroll-down">Pick number of rolls and sides</label>
+        <input class="rolls" type="number" placeholder="number of roles"/>
+      <select class="die">
+        <option value="20">D20</option>
+        <option value="12">D12</option>
+        <option value="10">D10</option>
+        <option value="8">D8</option>
+        <option value="6">D6</option>
+        <option value="4">D4</option>
+        </select>
+        <button class="dice-roller_button">roll my dice</button>
+        <div class="results">results</div>
+        </div>
     </aside>
+
     <div class="character-gallery">
       {{{body}}}
     </div>
@@ -53,6 +58,7 @@
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="/js/dice.js"></script>
 </body>
 
 </html>
