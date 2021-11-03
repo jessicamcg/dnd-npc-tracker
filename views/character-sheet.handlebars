@@ -1,98 +1,103 @@
-<form action="#" id="character-view-form">
-    <input
-        type="text"
-        placeholder="Character Name"
-        id="character-name"
-        required
-    />
-    <label for="race" name="race">Race:</label>
-    <select name="race_select" id="race-select" required>
-        <option value="Dragonborn" id="Dragonborn">Dragonborn</option>
-        <option value="Dwarf" id="Dwarf">Dwarf</option>
-        <option value="Elf" id="Elf">Elf</option>
-        <option value="Gnome" id="Gnome">Gnome</option>
-        <option value="Half-Elf" id="Half-Elf">Half-Elf</option>
-        <option value="Halfling" id="Halfling">Halfling</option>
-        <option value="Half-Orc" id="Half-Orc">Half-Orc</option>
-        <option value="Human" id="Human">Human</option>
-        <option value="Tiefling" if="Tiefling">Tiefling</option>
-    </select>
-    <label for="met_party" name="met_party">Have they met the party yet?</label>
-    <select name="met_party" id="character-met-party" required>
-        <option value="No" id="met-party_no">No</option>
-        <option value="Yes" id="met-party_yes">Yes</option>
-    </select>
-    <label for="class" name="class">Class:</label>
-    <select name="class" id="character-class">
-        <option value="null" id="no-class">Unselected</option>
-        <option value="Barbarian" id="Barbarian">Barbarian</option>
-        <option value="Bard" id="Bard">Bard</option>
-        <option value="Cleric" id="Cleric">Cleric</option>
-        <option value="Druid" id="Druid">Druid</option>
-        <option value="Fighter" id="Fighter">Fighter</option>
-        <option value="Monk" id="Monk">Monk</option>
-        <option value="Paladin" id="Paladin">Paladin</option>
-        <option value="Ranger" id="Ranger">Ranger</option>
-        <option value="Rogue" id="Rogue">Rogue</option>
-        <option value="Sorceror" id="Sorceror">Sorceror</option>
-        <option value="Warlock" id="Warlock">Warlock</option>
-        <option value="Wizard" id="Wizard">Wizard</option>
-    </select>
-    <div class="stat-holder">
-        <label for="strength" id="strength-label"></label>
-        <input
-            class="stats"
-            id="strength"
-            type="number"
-            placeholder="strength"
-        />
+<div class="row justify-space-between-md">
+    <div class="card">  
+        <form action="#" id="character-view-form">
+            <input
+                type="text"
+                placeholder="Character Name"
+                id="character-name"
+                required
+            />
+            <label for="race" name="race">Race:</label>
+            <select name="race_select" id="race-select" required>
+                <option value="Dragonborn" id="Dragonborn">Dragonborn</option>
+                <option value="Dwarf" id="Dwarf">Dwarf</option>
+                <option value="Elf" id="Elf">Elf</option>
+                <option value="Gnome" id="Gnome">Gnome</option>
+                <option value="Half-Elf" id="Half-Elf">Half-Elf</option>
+                <option value="Halfling" id="Halfling">Halfling</option>
+                <option value="Half-Orc" id="Half-Orc">Half-Orc</option>
+                <option value="Human" id="Human">Human</option>
+                <option value="Tiefling" if="Tiefling">Tiefling</option>
+            </select>
+            <label for="met_party" name="met_party">Have they met the party yet?</label>
+            <select name="met_party" id="character-met-party" required>
+                <option value="No" id="met-party_no">No</option>
+                <option value="Yes" id="met-party_yes">Yes</option>
+            </select>
+            <label for="class" name="class">Class:</label>
+            <select name="class" id="character-class">
+                <option value="null" id="no-class">Unselected</option>
+                <option value="Barbarian" id="Barbarian">Barbarian</option>
+                <option value="Bard" id="Bard">Bard</option>
+                <option value="Cleric" id="Cleric">Cleric</option>
+                <option value="Druid" id="Druid">Druid</option>
+                <option value="Fighter" id="Fighter">Fighter</option>
+                <option value="Monk" id="Monk">Monk</option>
+                <option value="Paladin" id="Paladin">Paladin</option>
+                <option value="Ranger" id="Ranger">Ranger</option>
+                <option value="Rogue" id="Rogue">Rogue</option>
+                <option value="Sorceror" id="Sorceror">Sorceror</option>
+                <option value="Warlock" id="Warlock">Warlock</option>
+                <option value="Wizard" id="Wizard">Wizard</option>
+            </select>
+            <div class="stat-holder form-group">
+                <label for="strength" id="strength-label"></label>
+                <input
+                    class="stats"
+                    id="strength"
+                    type="number"
+                    placeholder="strength"
+                />
+            </div>
+            <div class="stat-holder form-group">
+                <label for="dexterity" id="dexterity-label"></label>
+                <input
+                    class="stats"
+                    id="dexterity"
+                    type="number"
+                    placeholder="dexterity"
+                />
+            </div>
+            <div class="stat-holder form-group">
+                <label for="constitution" id="constitution-label"></label>
+                <input
+                    class="stats"
+                    id="constitution"
+                    type="number"
+                    placeholder="constitution"
+                />
+            </div>
+            <div class="stat-holder form-group">
+                <label for="intelligence" id="intelligence-label"></label>
+                <input
+                    class="stats"
+                    id="intelligence"
+                    type="number"
+                    placeholder="intelligence"
+                />
+            </div>
+            <div class="stat-holder form-group">
+                <label for="wisdom" id="wisdom-label"></label>
+                <input class="stats" id="wisdom" type="number" placeholder="wisdom" />
+            </div>
+            <div class="stat-holder form-group">
+                <label for="charisma" id="charisma-label"></label>
+                <input
+                    class="stats"
+                    id="charisma"
+                    type="number"
+                    placeholder="charisma"
+                />
+            </div>
+            <textarea
+                id="notes"
+                class="form-input"
+                type="text"
+                placeholder="Write any relevant notes for your character here"
+            ></textarea>
+            <button class="btn" type="submit">Update Character</button>
+        </form>
     </div>
-    <div class="stat-holder">
-        <label for="dexterity" id="dexterity-label"></label>
-        <input
-            class="stats"
-            id="dexterity"
-            type="number"
-            placeholder="dexterity"
-        />
-    </div>
-    <div class="stat-holder">
-        <label for="constitution" id="constitution-label"></label>
-        <input
-            class="stats"
-            id="constitution"
-            type="number"
-            placeholder="constitution"
-        />
-    </div>
-    <div class="stat-holder">
-        <label for="intelligence" id="intelligence-label"></label>
-        <input
-            class="stats"
-            id="intelligence"
-            type="number"
-            placeholder="intelligence"
-        />
-    </div>
-    <div class="stat-holder">
-        <label for="wisdom" id="wisdom-label"></label>
-        <input class="stats" id="wisdom" type="number" placeholder="wisdom" />
-    </div>
-    <div class="stat-holder">
-        <label for="charisma" id="charisma-label"></label>
-        <input
-            class="stats"
-            id="charisma"
-            type="number"
-            placeholder="charisma"
-        />
-    </div>
-    <textarea
-        id="notes"
-        class="form-input"
-        type="text"
-        placeholder="Write any relevant notes for your character here"
-    ></textarea>
-    <input type="submit" value="Update Character" />
-</form>
+</div>
+
 <script src="/js/characterViewAndUpdate.js"></script>
