@@ -6,17 +6,52 @@
     --light: #e3e4e3;
     --dark: #182c23;
 }
-header {
-    padding-bottom: 40px;
-    text-align: center;
-    /* background: var(--dark);
-    color: var(--light); */
+
+body {
+    background: url("../images/mtn-bg-1.jpg") no-repeat center center fixed;
+    background-size: cover;
+    min-width: 100vh;
+    min-height: 100vh;
+}
+
+nav {
+    background: var(--dark);
+    position: fixed !important; 
+    z-index: 100 !important;
+    width: 100% !important;
+}
+
+nav a {
+    color: var(--light);
+    transition: ease-in-out 0.5;
+}
+
+li.nav-item {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+a {
+    color: var(--primary);
+    transition: ease-in-out 0.5s;
+}
+
+nav a:hover,
+a:hover {
+    color: var(--tertiary);
+    transition: ease-in-out 0.5s;
 }
 
 main {
     display: flex;
     flex-wrap: wrap;
     flex-grow: 1;
+    background: url("../images/mtn-bg-1.jpg") no-repeat center center fixed;
+    background-size: cover;
+    min-width: 100vh;
+    min-height: 100vh;
+    padding-top: 110px;
 }
 
 aside {
@@ -30,8 +65,13 @@ h2 {
     font-size: 20px;
 }
 
+button {
+    background-color: var(--primary) !important; 
+    color: var(--light) !important;
+}
+
 .btn-no-style {
-    background: none;
+    background: none !important;
     border: none;
     padding: 0;
     cursor: pointer;
@@ -51,4 +91,11 @@ h2 {
 
 .card {
     margin: 20px;
+    opacity: 0.8;
+    transition: ease-in-out 0.5s;
+}
+
+.card:hover {
+    opacity: 1;
+    transition: ease-in-out 0.5s;
 }
