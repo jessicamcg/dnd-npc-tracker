@@ -5,14 +5,27 @@
     --quatrinary: #6c6b67;
     --light: #e3e4e3;
     --dark: #182c23;
+    /* light images */
+    --mountain1: url("https://cdn.discordapp.com/attachments/886473171631472690/905578439350837298/birmingham-museums-trust-RRn7VvZCbas-unsplash.jpg") no-repeat center center fixed;
+    --mountain2: url("https://cdn.discordapp.com/attachments/886473171631472690/905578427862646784/birmingham-museums-trust-wKlHsooRVbg-unsplash.jpg") no-repeat center center fixed;
+    --bog-monster: url("https://cdn.discordapp.com/attachments/886473171631472690/905579919743012924/shutterstock_1207264102.jpg") no-repeat center center fixed;
+    --red-dragon: url("https://cdn.discordapp.com/attachments/886473171631472690/905581918597288016/shutterstock_2019036044.jpg") no-repeat center center fixed;
+    --monk: url("https://cdn.discordapp.com/attachments/886473171631472690/905583674307788800/shutterstock_1790126246.jpg") no-repeat center center fixed;
+    --bard: url("https://cdn.discordapp.com/attachments/886473171631472690/905583678422413322/shutterstock_1792373851.jpg") no-repeat center center fixed;
+    --green-castle: url("https://cdn.discordapp.com/attachments/886473171631472690/905583730410799134/shutterstock_1099918733.jpg") no-repeat center center fixed;
+    /* dark images */
+    --dungeon: url("https://cdn.discordapp.com/attachments/886473171631472690/905580783438282782/shutterstock_2019811616.jpg") no-repeat center center fixed;
+    --purgatory: url("https://cdn.discordapp.com/attachments/886473171631472690/905579925732491274/shutterstock_1877819761.jpg") no-repeat center center fixed;
+    --witch-house: url("https://cdn.discordapp.com/attachments/886473171631472690/905581296586203146/shutterstock_1802096920.jpg") no-repeat center center fixed;
+    --hero-v-dragon: url("https://cdn.discordapp.com/attachments/886473171631472690/905580778308661278/1820567591-huge.jpg") no-repeat center center fixed;
+    --dark-castle-army: url("https://cdn.discordapp.com/attachments/886473171631472690/905583732939956234/shutterstock_1735871231.jpg") no-repeat center center fixed;
 }
+
 .dice-roller {
     padding-top:5rem;
 }
 
 body {
-    /* background: url("../images/mtn-bg-1.jpg") no-repeat center center fixed; */
-    /* background-size: cover; */
     min-width: 100vh;
     min-height: 100vh;
 }
@@ -50,11 +63,6 @@ main {
     display: flex;
     flex-wrap: wrap;
     flex-grow: 1;
-    /* background: url("../images/mtn-bg-1.jpg") no-repeat center center fixed;
-    background-size: cover;
-    min-width: 100vh;
-    min-height: 100vh; */
-    /* padding-top: 110px; */
 }
 
 aside {
@@ -68,8 +76,8 @@ aside {
 
 .character-gallery{
     padding-top: 110px;
-    background: url("../images/mtn-bg-1.jpg") no-repeat center center fixed;
-    background-size: cover;
+    /* background: var(--mountain1);
+    background-size: cover; */
     min-width: 100vh;
     min-height: 100vh;
 }
@@ -115,4 +123,16 @@ button {
 .card:hover {
     opacity: 1;
     transition: ease-in-out 0.5s;
+}
+
+#create-menu {
+
+}
+
+#view-menu {
+
+}
+
+#login-menu {
+    
 }

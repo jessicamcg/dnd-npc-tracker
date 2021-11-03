@@ -1,4 +1,4 @@
-const dice_button = document.querySelector('.dice-roller_button')
+const dice_button = document.querySelector('.dice-roller-button')
 const results = document.querySelector('.results')
 
 
