@@ -6,19 +6,19 @@
     --light: #e3e4e3;
     --dark: #182c23;
     /* light images */
-    --mountain1: url("https://cdn.discordapp.com/attachments/886473171631472690/905578439350837298/birmingham-museums-trust-RRn7VvZCbas-unsplash.jpg") no-repeat center center fixed;
-    --mountain2: url("https://cdn.discordapp.com/attachments/886473171631472690/905578427862646784/birmingham-museums-trust-wKlHsooRVbg-unsplash.jpg") no-repeat center center fixed;
-    --bog-monster: url("https://cdn.discordapp.com/attachments/886473171631472690/905579919743012924/shutterstock_1207264102.jpg") no-repeat center center fixed;
-    --red-dragon: url("https://cdn.discordapp.com/attachments/886473171631472690/905581918597288016/shutterstock_2019036044.jpg") no-repeat center center fixed;
-    --monk: url("https://cdn.discordapp.com/attachments/886473171631472690/905583674307788800/shutterstock_1790126246.jpg") no-repeat center center fixed;
-    --bard: url("https://cdn.discordapp.com/attachments/886473171631472690/905583678422413322/shutterstock_1792373851.jpg") no-repeat center center fixed;
-    --green-castle: url("https://cdn.discordapp.com/attachments/886473171631472690/905583730410799134/shutterstock_1099918733.jpg") no-repeat center center fixed;
+    --mountain1: url("https://cdn.discordapp.com/attachments/886473171631472690/905578439350837298/birmingham-museums-trust-RRn7VvZCbas-unsplash.jpg") no-repeat center center;
+    --mountain2: url("https://cdn.discordapp.com/attachments/886473171631472690/905578427862646784/birmingham-museums-trust-wKlHsooRVbg-unsplash.jpg") no-repeat center center;
+    --bog-monster: url("https://cdn.discordapp.com/attachments/886473171631472690/905579919743012924/shutterstock_1207264102.jpg") no-repeat center center;
+    --red-dragon: url("https://cdn.discordapp.com/attachments/886473171631472690/905581918597288016/shutterstock_2019036044.jpg") no-repeat center center;
+    --monk: url("https://cdn.discordapp.com/attachments/886473171631472690/905583674307788800/shutterstock_1790126246.jpg") no-repeat center center;
+    --bard: url("https://cdn.discordapp.com/attachments/886473171631472690/905583678422413322/shutterstock_1792373851.jpg") no-repeat center center;
+    --green-castle: url("https://cdn.discordapp.com/attachments/886473171631472690/905583730410799134/shutterstock_1099918733.jpg") no-repeat center center;
     /* dark images */
-    --dungeon: url("https://cdn.discordapp.com/attachments/886473171631472690/905580783438282782/shutterstock_2019811616.jpg") no-repeat center center fixed;
-    --purgatory: url("https://cdn.discordapp.com/attachments/886473171631472690/905579925732491274/shutterstock_1877819761.jpg") no-repeat center center fixed;
-    --witch-house: url("https://cdn.discordapp.com/attachments/886473171631472690/905581296586203146/shutterstock_1802096920.jpg") no-repeat center center fixed;
-    --hero-v-dragon: url("https://cdn.discordapp.com/attachments/886473171631472690/905580778308661278/1820567591-huge.jpg") no-repeat center center fixed;
-    --dark-castle-army: url("https://cdn.discordapp.com/attachments/886473171631472690/905583732939956234/shutterstock_1735871231.jpg") no-repeat center center fixed;
+    --dungeon: url("https://cdn.discordapp.com/attachments/886473171631472690/905580783438282782/shutterstock_2019811616.jpg") no-repeat center center;
+    --purgatory: url("https://cdn.discordapp.com/attachments/886473171631472690/905579925732491274/shutterstock_1877819761.jpg") no-repeat center center;
+    --witch-house: url("https://cdn.discordapp.com/attachments/886473171631472690/905581296586203146/shutterstock_1802096920.jpg") no-repeat center center;
+    --hero-v-dragon: url("https://cdn.discordapp.com/attachments/886473171631472690/905580778308661278/1820567591-huge.jpg") no-repeat center center;
+    --dark-castle-army: url("https://cdn.discordapp.com/attachments/886473171631472690/905583732939956234/shutterstock_1735871231.jpg") no-repeat center center;
 }
 
 .dice-roller {
@@ -57,6 +57,8 @@ nav a:hover,
 a:hover {
     color: var(--tertiary);
     transition: ease-in-out 0.5s;
+    text-decoration: none;
+    opacity: 1;
 }
 
 main {
@@ -75,16 +77,16 @@ aside {
 }
 
 .character-gallery{
-    padding-top: 110px;
+    padding: 50px 0px 0px 0px;
     /* background: var(--mountain1);
     background-size: cover; */
     min-width: 100vh;
     min-height: 100vh;
+
 }
 
 h2 {
     padding-top: 110px;
-    
     font-size: 20px;
 }
 
@@ -125,14 +127,32 @@ button {
     transition: ease-in-out 0.5s;
 }
 
-#create-menu {
+.menu-card {
+    margin: 0px !important;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
+.menu-content {
+    background: white;
+    opacity: 0.5;
+    height: 200px;
+    width: 500px;
+    padding: 70px;
+    margin: 70px;
+    text-align: center;
+}
+
+#create-menu {
+    background: var(--monk);
 }
 
 #view-menu {
-
+    background: var(--bog-monster);
 }
 
 #login-menu {
-    
+    background: var(--green-castle);
 }
