@@ -1,4 +1,8 @@
-const modifierCalc = require("../../utils/helpers");
+const modifierCalc = (numStr) => {
+    const realNumber = parseInt(numStr);
+    const modifier = (realNumber - 10) / 2;
+    return Math.floor(modifier).toString();
+};
 const characterView = async (id) => {
     const characterName = document.querySelector("#character-name");
     const strength = document.querySelector("#strength");
@@ -20,8 +24,8 @@ const characterView = async (id) => {
         method: "GET",
     });
     const responseParsed = await response.json();
-    console.log(responseParsed);
-    console.log(characterName);
+    // console.log(responseParsed);
+    // console.log(characterName);
     // console.log(responseParsed.class);
     if (responseParsed) {
         characterName.setAttribute("value", responseParsed.name);
@@ -149,7 +153,7 @@ const characterView = async (id) => {
 
 const windowArr = window.location.pathname.split("/");
 const windowID = windowArr[windowArr.length - 1];
-console.log("windowid:", windowID);
+// console.log("windowid:", windowID);
 characterView(windowID);
 
 // const characterUpdate = async (event, id) => {
