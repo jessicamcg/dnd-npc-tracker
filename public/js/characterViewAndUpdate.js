@@ -1,4 +1,4 @@
-const modifierCalc = require("../../utils/helpers");
+const modifierCalc = require('../../utils/helpers');
 const characterView = async (id) => {
     const characterName = document.querySelector("#character-name");
     const strength = document.querySelector("#strength");
@@ -49,7 +49,7 @@ const characterView = async (id) => {
                 halfElf.setAttribute("selected", "");
                 break;
             case "Halfling":
-                const halfing = document.querySelector("#Halfing");
+                const halfing = document.querySelector("#Halfling");
                 halfing.setAttribute("selected", "");
                 break;
             case "Half-Orc":

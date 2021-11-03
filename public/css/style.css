@@ -51,17 +51,27 @@ main {
     background-size: cover;
     min-width: 100vh;
     min-height: 100vh;
-    padding-top: 110px;
+    /* padding-top: ; */
 }
 
 aside {
-    flex: 0;
+    display: flex;
+    /* flex: 0; */
     padding: 10px;
     text-align: left;
     margin-right: 100px;
+    border:#182c23 solid;
+    border-width: 10px;
+    
+}
+
+.character-gallery{
+    padding-top: 110px
 }
 
 h2 {
+    padding-top: 110px;
+    
     font-size: 20px;
 }
 
