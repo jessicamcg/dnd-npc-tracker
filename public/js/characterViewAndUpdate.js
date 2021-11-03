@@ -1,3 +1,4 @@
+const modifierCalc = require("../../utils/helpers");
 const characterView = async (id) => {
     const characterName = document.querySelector("#character-name");
     const strength = document.querySelector("#strength");
@@ -8,13 +9,19 @@ const characterView = async (id) => {
     const charisma = document.querySelector("#charisma");
     const notes = document.querySelector("#notes");
 
+    const strengthLabel = docutment.querySelector("#strength-label");
+    const dexterityLabel = docutment.querySelector("#dexterity-label");
+    const constitutionLabel = docutment.querySelector("#constitution-label");
+    const intelligenceLabel = docutment.querySelector("#intelligence-label");
+    const wisdomLabel = docutment.querySelector("#wisdom-label");
+    const charismaLabel = docutment.querySelector("#charisma-label");
+
     const response = await fetch(`/api/character/${id}`, {
         method: "GET",
         headers: { "Content-Type": "application/json" },
     });
 
-    
-    const responseParsed = await response.json()
+    const responseParsed = await response.json();
     console.log(responseParsed);
     console.log(characterName);
     // console.log(responseParsed.class);
@@ -123,11 +130,27 @@ const characterView = async (id) => {
         intelligence.setAttribute("value", responseParsed.stat.intelligence);
         wisdom.setAttribute("value", responseParsed.stat.wisdom);
         charisma.setAttribute("value", responseParsed.stat.charisma);
+        strengthLabel.textContent = modifierCalc(
+            strength.getAttribute("value")
+        );
+        dexterityLabel.textContent = modifierCalc(
+            dexterity.getAttribute("value")
+        );
+        constitutionLabel.textContent = modifierCalc(
+            constitution.getAttribute("value")
+        );
+        intelligenceLabel.textContent = modifierCalc(
+            intelligence.getAttribute("value")
+        );
+        wisdomLabel.textContent = modifierCalc(wisdom.getAttribute("value"));
+        charismaLabel.textContent = modifierCalc(
+            charisma.getAttribute("value")
+        );
     }
 };
 
-const windowArr = window.location.pathname.split('/');
-const windowID = windowArr[windowArr.length-1]
+const windowArr = window.location.pathname.split("/");
+const windowID = windowArr[windowArr.length - 1];
 console.log(windowID);
 characterView(windowID);
 
