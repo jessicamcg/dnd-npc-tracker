@@ -53,12 +53,11 @@ main {
     background-size: cover;
     min-width: 100vh;
     min-height: 100vh;
-    /* padding-top: ; */
+    /* padding-top: 110px; */
 }
 
 aside {
     display: flex;
-    /* flex: 20px; */
     padding: 10px;
     text-align: left;
     margin-right: 100px;

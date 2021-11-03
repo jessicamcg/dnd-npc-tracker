@@ -21,6 +21,15 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/">My characters</a>
                 </li>
+            <!-- Button trigger modal -->
+                <button
+                    type="button"
+                    class="btn-no-style"
+                    data-toggle="modal"
+                    data-target="#exampleModal"
+                >
+                    Instructions
+                </button>
                 {{#if loggedIn}}
                     <button id="logout" class="btn-no-style">Logout</button>
                 {{else}}
@@ -29,15 +38,15 @@
                     </li>
                 {{/if}}
             </div>
-            <!-- Button trigger modal -->
-            <button
-                type="button"
-                class="btn btn-primary"
-                data-toggle="modal"
-                data-target="#exampleModal"
-            >
-                Instructions
-            </button>
+              {{!-- <!-- Button trigger modal -->
+              <button
+                  type="button"
+                  class="btn-no-style"
+                  data-toggle="modal"
+                  data-target="#exampleModal"
+              >
+                  Instructions
+              </button> --}}
             {{!-- instructions --}}
         </nav>
         <main>

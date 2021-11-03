@@ -1,4 +1,4 @@
-const { DiceRoller, DiceRoll } = require('rpg-dice-roller');
+                // const { DiceRoller, DiceRoll } = require('rpg-dice-roller');
 // import { DiceRoll } from 'rpg-dice-roller';
 // const numberOfRolls = document.querySelector('.rolls').value;
 // const dice = document.querySelector('.die').value;
