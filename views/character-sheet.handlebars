@@ -38,21 +38,27 @@
         <option value="Warlock" id="Warlock">Warlock</option>
         <option value="Wizard" id="Wizard">Wizard</option>
     </select>
+    <label for="strength" id="strength-label"></label>
     <input class="stats" id="strength" type="number" placeholder="strength" />
+    <label for="dexterity" id="dexterity-label"></label>
     <input class="stats" id="dexterity" type="number" placeholder="dexterity" />
+    <label for="constitution" id="constitution-label"></label>
     <input
         class="stats"
         id="constitution"
         type="number"
         placeholder="constitution"
     />
+    <label for="intelligence" id="intelligence-label"></label>
     <input
         class="stats"
         id="intelligence"
         type="number"
         placeholder="intelligence"
     />
+    <label for="wisdom" id="wisdom-label"></label>
     <input class="stats" id="wisdom" type="number" placeholder="wisdom" />
+    <label for="charisma" id="charisma-label"></label>
     <input class="stats" id="charisma" type="number" placeholder="charisma" />
     <textarea
         id="notes"
@@ -62,4 +68,5 @@
     ></textarea>
     <input type="submit" value="Update Character" />
 </form>
-<script src="/js/characterViewAndUpdate.js"></script>
+<script src="../public/js/characterViewAndUpdate.js"></script>
+<script src="../utils/helpers.js"></script>
