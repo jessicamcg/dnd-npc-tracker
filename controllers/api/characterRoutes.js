@@ -87,26 +87,35 @@ router.put('/:id', async (req, res) => {
     } 
 
     const characterData = await Character.update({
-      name: req.body.characterName,
-      race: req.body.characterRace,
-      class: req.body.characterClass,
-      notes: req.body.notes,
-      met_party: metParty
+        name: req.body.characterName,
+        race: req.body.characterRace,
+        class: req.body.characterClass,
+        notes: req.body.notes,
+        met_party: metParty
       }, {
+        where: {
+          id: req.params.id,
+      }
+    });
+
+    const newCharacterData = await Character.findOne({
       where: {
         id: req.params.id,
       }
     });
 
     const statsData = await Stats.update({
-      char_id_fk: characterData.id,
-      strength: req.body.strength,
-      dexterity: req.body.dexterity,
-      constitution: req.body.constitution,
-      intelligence: req.body.intelligence,
-      wisdom: req.body.wisdom,
-      charisma: req.body.charisma
-    });
+        strength: req.body.strength,
+        dexterity: req.body.dexterity,
+        constitution: req.body.constitution,
+        intelligence: req.body.intelligence,
+        wisdom: req.body.wisdom,
+        charisma: req.body.charisma
+      }, {
+        where: {
+          char_id_fk: newCharacterData.id,
+        }
+      });
 
     const characterSheet = await Character.findOne({
       where: {
@@ -116,7 +125,6 @@ router.put('/:id', async (req, res) => {
       include: [{ model: Stats }]
     });
     console.log(statsData);
-    console.log(characterData);
     console.log(characterSheet);
     res.status(200).json(characterSheet)
   } catch (err) {
