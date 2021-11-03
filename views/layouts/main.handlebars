@@ -11,17 +11,25 @@
 
 <body>
 
-  <nav>
-    <a href="/">Home</a>
-    {{#if loggedIn}}
-    <button id="logout" class="btn-no-style">Logout</button>
-    {{else}}
-    <a href="/login">Login</a>
-    {{/if}}
+
+
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/">DND Character Tracker</a>
+      <li class="nav-item">
+        <a class="nav-link" href="/">Home</a>
+      </li>
+      {{#if loggedIn}}
+      <button id="logout" class="btn-no-style">Logout</button>
+      {{else}}
+      <li class="nav-item">
+        <a class="nav-link" href="/login">Login</a>
+      </li>
+      {{/if}}
+    </div>
   </nav>
-   <header>
-    <h1>DND Character Tracker</h1>
-  </header>
+
+
   <main>
     <aside>
       <h2><a href="/character-create">Create a new character</a></h2>
