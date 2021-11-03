@@ -23,12 +23,10 @@ const characterView = async (id) => {
 
     const response = await fetch(`/api/character/${id}`, {
         method: "GET",
-        headers: { "Content-Type": "application/json" },
     });
-
     const responseParsed = await response.json();
-    console.log(responseParsed);
-    console.log(characterName);
+    // console.log(responseParsed);
+    // console.log(characterName);
     // console.log(responseParsed.class);
     if (responseParsed) {
         characterName.setAttribute("value", responseParsed.name);
@@ -156,7 +154,7 @@ const characterView = async (id) => {
 
 const windowArr = window.location.pathname.split("/");
 const windowID = windowArr[windowArr.length - 1];
-console.log(windowID);
+// console.log("windowid:", windowID);
 characterView(windowID);
 
 const characterUpdate = async (event) => {
