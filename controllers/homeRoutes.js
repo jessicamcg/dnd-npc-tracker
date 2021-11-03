@@ -51,11 +51,12 @@ router.get('/my-characters', async (req,res) =>{
   }
   try {
     const characterData = await Character.findAll({
-      // where: {
-      //   dm_id_fk: req.session.dm_id,
-      // },
-      // include: [{ model:Stats }]
+      where: {
+        dm_id_fk: req.session.dm_id,
+      },
+      include: [{ model:Stats }]
     });
+    
     const characters = characterData.map((character) => {
       return character.get({ plain:true })
     });
