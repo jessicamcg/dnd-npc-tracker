@@ -1,4 +1,9 @@
-// const modifierCalc = require(".../utils/helpers.js");
+const modifierCalc = (numStr) => {
+    const realNumber = parseInt(numStr);
+    const modifier = (realNumber - 10) / 2;
+    return Math.floor(modifier).toString();
+};
+
 const characterView = async (id) => {
     const characterName = document.querySelector("#character-name");
     const strength = document.querySelector("#strength");
@@ -154,43 +159,47 @@ const windowID = windowArr[windowArr.length - 1];
 console.log(windowID);
 characterView(windowID);
 
-// const characterUpdate = async (event, id) => {
-//     event.preventDefault();
-//     const characterName = document
-//         .querySelector("#character-name")
-//         .value.trim();
-//     const characterRace = document.querySelector("#race-select");
-//     const characterMetParty = document.querySelector("#character-met-party");
-//     const characterClass = document.querySelector("#character-class");
-//     const strength = document.querySelector("#strength");
-//     const dexterity = document.querySelector("#dexterity");
-//     const constitution = document.querySelector("#constitution");
-//     const intelligence = document.querySelector("#intelligence");
-//     const wisdom = document.querySelector("#wisdom");
-//     const charisma = document.querySelector("#charisma");
-//     const notes = document.querySelector("#notes").value.trim();
+const characterUpdate = async (event) => {
+    event.preventDefault();
+    const characterName = document
+        .querySelector("#character-name")
+        .value.trim();
+    const characterRace = document.querySelector("#race-select");
+    const characterMetParty = document.querySelector("#character-met-party");
+    const characterClass = document.querySelector("#character-class");
+    const strength = document.querySelector("#strength");
+    const dexterity = document.querySelector("#dexterity");
+    const constitution = document.querySelector("#constitution");
+    const intelligence = document.querySelector("#intelligence");
+    const wisdom = document.querySelector("#wisdom");
+    const charisma = document.querySelector("#charisma");
+    const notes = document.querySelector("#notes").value.trim();
 
-//     const response = await fetch(`api/character/${id}`, {
-//         method: "PUT",
-//         body: JSON.stringify({
-//             characterName,
-//             characterRace,
-//             characterMetParty,
-//             characterClass,
-//             strength,
-//             dexterity,
-//             constitution,
-//             intelligence,
-//             wisdom,
-//             charisma,
-//             notes,
-//         }),
-//         headers: { "Content-Type": "application/json" },
-//     });
+    const response = await fetch(`api/character/${windowID}`, {
+        method: "PUT",
+        body: JSON.stringify({
+            characterName,
+            characterRace,
+            characterMetParty,
+            characterClass,
+            strength,
+            dexterity,
+            constitution,
+            intelligence,
+            wisdom,
+            charisma,
+            notes,
+        }),
+        headers: { "Content-Type": "application/json" },
+    });
 
-//     if (response.ok) {
-//         document.location.replace(`character/${id}`);
-//     } else {
-//         alert("Something went wrong updating the character");
-//     }
-// };
+    if (response.ok) {
+        document.location.replace(`character/${windowID}`);noe 
+    } else {
+        alert("Something went wrong updating the character");
+    }
+};
+
+document
+    .querySelector("#character-view-form")
+    .addEventListener("submit", characterUpdate);
