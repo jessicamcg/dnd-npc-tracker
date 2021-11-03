@@ -16,6 +16,9 @@ body {
 
 nav {
     background: var(--dark);
+    position: fixed !important; 
+    z-index: 100 !important;
+    width: 100% !important;
 }
 
 nav a {
@@ -44,7 +47,11 @@ main {
     display: flex;
     flex-wrap: wrap;
     flex-grow: 1;
-
+    background: url("../images/mtn-bg-1.jpg") no-repeat center center fixed;
+    background-size: cover;
+    min-width: 100vh;
+    min-height: 100vh;
+    padding-top: 110px;
 }
 
 aside {
