@@ -1,4 +1,8 @@
-const modifierCalc = require("../../utils/helpers");
+const modifierCalc = (numStr) => {
+    const realNumber = parseInt(numStr);
+    const modifier = (realNumber - 10) / 2;
+    return Math.floor(modifier).toString();
+};
 const characterView = async (id) => {
     const characterName = document.querySelector("#character-name");
     const strength = document.querySelector("#strength");
@@ -9,21 +13,19 @@ const characterView = async (id) => {
     const charisma = document.querySelector("#charisma");
     const notes = document.querySelector("#notes");
 
-    const strengthLabel = docutment.querySelector("#strength-label");
-    const dexterityLabel = docutment.querySelector("#dexterity-label");
-    const constitutionLabel = docutment.querySelector("#constitution-label");
-    const intelligenceLabel = docutment.querySelector("#intelligence-label");
-    const wisdomLabel = docutment.querySelector("#wisdom-label");
-    const charismaLabel = docutment.querySelector("#charisma-label");
+    const strengthLabel = document.querySelector("#strength-label");
+    const dexterityLabel = document.querySelector("#dexterity-label");
+    const constitutionLabel = document.querySelector("#constitution-label");
+    const intelligenceLabel = document.querySelector("#intelligence-label");
+    const wisdomLabel = document.querySelector("#wisdom-label");
+    const charismaLabel = document.querySelector("#charisma-label");
 
     const response = await fetch(`/api/character/${id}`, {
         method: "GET",
-        headers: { "Content-Type": "application/json" },
     });
-
     const responseParsed = await response.json();
-    console.log(responseParsed);
-    console.log(characterName);
+    // console.log(responseParsed);
+    // console.log(characterName);
     // console.log(responseParsed.class);
     if (responseParsed) {
         characterName.setAttribute("value", responseParsed.name);
@@ -49,8 +51,8 @@ const characterView = async (id) => {
                 halfElf.setAttribute("selected", "");
                 break;
             case "Halfling":
-                const halfing = document.querySelector("#Halfing");
-                halfing.setAttribute("selected", "");
+                const halfling = document.querySelector("#Halfling");
+                halfling.setAttribute("selected", "");
                 break;
             case "Half-Orc":
                 const halfOrc = document.querySelector("#Half-Orc");
@@ -151,7 +153,7 @@ const characterView = async (id) => {
 
 const windowArr = window.location.pathname.split("/");
 const windowID = windowArr[windowArr.length - 1];
-console.log(windowID);
+// console.log("windowid:", windowID);
 characterView(windowID);
 
 // const characterUpdate = async (event, id) => {
