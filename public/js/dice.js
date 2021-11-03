@@ -26,4 +26,4 @@ if (rolly) {
 
 }
 
-dice_button.addEventListener('click', getEL);
+dice_button.addEventListener('click', getEL);   
