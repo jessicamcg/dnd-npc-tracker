@@ -78,4 +78,58 @@ router.get('/', async (req, res) => {
     }
 });
 
+router.put('/:id', async (req, res) => {
+  console.log(req.body);
+  try {
+    let metParty = false;
+    if (req.body.characterMetParty == 'Yes') {
+        metParty = true;
+    } 
+
+    const characterData = await Character.update({
+        name: req.body.characterName,
+        race: req.body.characterRace,
+        class: req.body.characterClass,
+        notes: req.body.notes,
+        met_party: metParty
+      }, {
+        where: {
+          id: req.params.id,
+      }
+    });
+
+    const newCharacterData = await Character.findOne({
+      where: {
+        id: req.params.id,
+      }
+    });
+
+    const statsData = await Stats.update({
+        strength: req.body.strength,
+        dexterity: req.body.dexterity,
+        constitution: req.body.constitution,
+        intelligence: req.body.intelligence,
+        wisdom: req.body.wisdom,
+        charisma: req.body.charisma
+      }, {
+        where: {
+          char_id_fk: newCharacterData.id,
+        }
+      });
+
+    const characterSheet = await Character.findOne({
+      where: {
+          id: req.params.id
+      },
+
+      include: [{ model: Stats }]
+    });
+    console.log(statsData);
+    console.log(characterSheet);
+    res.status(200).json(characterSheet)
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 module.exports = router;
