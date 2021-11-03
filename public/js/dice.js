@@ -1,37 +1,29 @@
-<<<<<<< HEAD
-const numberOfRolls = document.querySelector('.rolls');
-const dice = document.querySelector('.die').value;
 const dice_button = document.querySelector('.dice-roller_button')
+const results = document.querySelector('.results')
 
 
-dice_button.addEventListener('click', response);
+async function getEL(){
+const numberOfRolls = await document.querySelector('.rolls').value;
+const dice = await document.querySelector('.die').value;
 
-
-const response = await fetch(`dice/:number/:type`, {
+const response = await fetch(`dice/${numberOfRolls}/${dice}`, {
     method: "POST",
     body: JSON.stringify({
         numOfRolls: numberOfRolls,
         Die: dice,
-    })
-});
-=======
-//  // const { DiceRoller, DiceRoll } = require('rpg-dice-roller');
-// // import { DiceRoll } from 'rpg-dice-roller';
-// // const numberOfRolls = document.querySelector('.rolls').value;
-// // const dice = document.querySelector('.die').value;
-// // const dice_button = document.querySelector('.dice-roller_button')
-// // const results = document.querySelector('.results')
+    }),
+    headers: { "Content-Type": "application/json" },
+})
+const rolly = await response.json();
+if (rolly) {
+    console.log(rolly)
+    results.innerHTML = rolly;
+    
+} else {
+    console.log(response)
+    alert("dice roll failed");
+};
 
+}
 
-// const rollDice = (number, type) => {
-//     console.log('hey');
-//     const numberStr = number.toString()
-//     const roll = new DiceRoll(`${numberStr}d${type}`)
-//     console.log(roll.output)
-//     // results.innerHTML = roll.output;
-// }
-
-// // dice_button.addEventListener('click', rollDice(numberOfRolls,dice));
-
-// rollDice(5,"12")
->>>>>>> main
+dice_button.addEventListener('click', getEL);
