@@ -9,9 +9,10 @@
 .dice-roller {
     padding-top:5rem;
 }
+
 body {
-    background: url("../images/mtn-bg-1.jpg") no-repeat center center fixed;
-    background-size: cover;
+    /* background: url("../images/mtn-bg-1.jpg") no-repeat center center fixed; */
+    /* background-size: cover; */
     min-width: 100vh;
     min-height: 100vh;
 }
@@ -49,10 +50,10 @@ main {
     display: flex;
     flex-wrap: wrap;
     flex-grow: 1;
-    background: url("../images/mtn-bg-1.jpg") no-repeat center center fixed;
+    /* background: url("../images/mtn-bg-1.jpg") no-repeat center center fixed;
     background-size: cover;
     min-width: 100vh;
-    min-height: 100vh;
+    min-height: 100vh; */
     /* padding-top: 110px; */
 }
 
@@ -60,14 +61,17 @@ aside {
     display: flex;
     padding: 10px;
     text-align: left;
-    margin-right: 100px;
-    border:#182c23 solid;
+    /* margin-right: 100px; */
+    border-right: var(--dark) solid;
     border-width: 10px;
-    
 }
 
 .character-gallery{
-    padding-top: 110px
+    padding-top: 110px;
+    background: url("../images/mtn-bg-1.jpg") no-repeat center center fixed;
+    background-size: cover;
+    min-width: 100vh;
+    min-height: 100vh;
 }
 
 h2 {
@@ -92,7 +96,9 @@ button {
     margin-left: 16px;
 }
 
-.login-card {
+.login-card,
+#character-creation-form,
+#character-view-form {
     margin: 0 auto;
     padding: 5px;
     border-radius: var(--border-radius);
