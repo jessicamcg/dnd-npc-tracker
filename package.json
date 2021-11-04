@@ -10,7 +10,6 @@
     "express": "^4.17.1",
     "express-handlebars": "^5.3.4",
     "express-session": "^1.17.2",
-    "firebase": "^9.2.0",
     "mysql2": "^2.3.2",
     "rpg-dice-roller": "^5.0.0",
     "sequelize": "^6.8.0"
