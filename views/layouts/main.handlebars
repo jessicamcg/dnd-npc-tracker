@@ -17,32 +17,32 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-        
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/character-create">Create a new
-              character</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/my-characters">My characters</a>
-          </li>
-          
-          {{#if loggedIn}}
-          <button id="logout" class="btn-no-style">Logout</button>
-          {{else}}
-          <li class="nav-item">
-            <a class="nav-link" href="/login">Login</a>
-          </li>
-          {{/if}}
-        
+
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/character-create">Create a new
+            character</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/my-characters">My characters</a>
+        </li>
+
+        {{#if loggedIn}}
+        <button id="logout" class="btn-no-style">Logout</button>
+        {{else}}
+        <li class="nav-item">
+          <a class="nav-link" href="/login">Login</a>
+        </li>
+        {{/if}}
+
       </div>
       <li class="nav-item">
-            <button type="button" class="btn-no-style" data-toggle="modal" data-target="#exampleModal">
-            Instructions
-           </button>
-          </li>
+        <button type="button" class="btn-no-style" data-toggle="modal" data-target="#exampleModal">
+          Instructions
+        </button>
+      </li>
       <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
         aria-controls="offcanvasNavbar">
         <span class="material-icons">casino</span>
@@ -55,25 +55,28 @@
         <div class="offcanvas-body">
           <div class='dice-roller'>
             <label class="dice-roller_header mb-2">Select dice number and type</label>
-            <div class="dice-roller_options">
-              <input class="dice-roller_number" type="number" placeholder="Number of Dice" />
-              <select class="dice-roller_type">
-                <option value="20">D20</option>
-                <option value="12">D12</option>
-                <option value="10">D10</option>
-                <option value="8">D8</option>
-                <option value="6">D6</option>
-                <option value="4">D4</option>
-              </select>
-              <button class="dice-roller-button btn mt-1">Roll</button>
+            <div class="dice-roller_options form-floating">
+              <input id="num-of-dice" class="dice-roller_number form-control" type="number"
+                placeholder="Number of Dice" />
+              <label for="num-of-dice">Number of Dice</label>
             </div>
-            <div class="dice-roller_results mt-2">
-              <label for="results" class="dice-roller_newest no-rolls mt-2 mb-2">Newest Roll:</label>
-              <ul class="results list-group"></ul>
-            </div>
+            <select id="dice-select" class="dice-roller_type form-select">
+              <option value="20">D20</option>
+              <option value="12">D12</option>
+              <option value="10">D10</option>
+              <option value="8">D8</option>
+              <option value="6">D6</option>
+              <option value="4">D4</option>
+            </select>
+            <button class="dice-roller-button btn mt-2">Roll</button>
+          </div>
+          <div class="dice-roller_results mt-2">
+            <label for="results" class="dice-roller_newest no-rolls mt-2 mb-2">Newest Roll:</label>
+            <ul class="results list-group"></ul>
           </div>
         </div>
       </div>
+    </div>
     </div>
   </nav>
   <main class="row">

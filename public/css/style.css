@@ -95,7 +95,7 @@ aside {
     display: flex;
     flex-wrap: wrap;
     align-content: center;
-    /* justify-content: center; */
+    justify-content: center;
 }
 
 .dice-roller_header {
@@ -103,18 +103,20 @@ aside {
 }
 
 .dice-roller_number {
-    width: 70%;
+    width: 90%;
 }
 
 .dice-roller_type {
     width: 25%;
 }
+
 .dice-roller-button {
-    width:100%
+    width: 82%
 }
+
 .dice-roller_results,
 .dice-roller_options {
-    width: 100%;
+    /* width: 100%; */
 }
 
 .dice-roller_results {
