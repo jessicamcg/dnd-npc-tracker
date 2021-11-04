@@ -66,7 +66,7 @@ a {
 }
 
 nav a:hover,
-a:hover, 
+a:hover,
 li.nav-item:hover {
     color: var(--tertiary);
     transition: ease-in-out 0.5s;
@@ -96,6 +96,33 @@ aside {
     flex-wrap: wrap;
     align-content: center;
     /* justify-content: center; */
+}
+
+.dice-roller_header {
+    font-size: 1.5rem;
+}
+
+.dice-roller_number {
+    width: 70%;
+}
+
+.dice-roller_type {
+    width: 25%;
+}
+.dice-roller-button {
+    width:100%
+}
+.dice-roller_results,
+.dice-roller_options {
+    width: 100%;
+}
+
+.dice-roller_results {
+    border-top: var(--primary) solid 2px;
+}
+
+.dice-roller_newest {
+    font-size: 1.5rem;
 }
 
 .no-rolls {
