@@ -234,16 +234,17 @@ button {
     width: 100%;
 }
 
-.my-characters {
-    flex-wrap: wrap;
-    margin-top: -100px;
+#my-char-div {
     background: var(--witch-house);
-    background-size: cover;
-    padding-top: 100px;
-    justify-content: center;
-    align-content: center;
     height: 100%;
     width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+}
+
+.my-characters {
+    padding-top: 100px;
 }
 
 .menu-card {
@@ -293,7 +294,4 @@ button {
         padding: 0.5rem 1rem;
     }
 
-    .character-gallery {
-        width: 100vh;
-    }
 }
