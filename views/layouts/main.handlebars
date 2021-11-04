@@ -8,7 +8,7 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-light bg-light fixed-top">
+  <nav class="navbar navbar-light fixed-top">
     <div class="container-fluid">
       <a class="navbar-brand" href="/">DND Character Tracker</a>
       <li class="nav-item">
@@ -21,6 +21,9 @@
       <li class="nav-item">
         <a class="nav-link" href="/my-characters">My characters</a>
       </li>
+      <button type="button" class="btn-no-style" data-toggle="modal" data-target="#exampleModal">
+        Instructions
+      </button>
       {{#if loggedIn}}
       <button id="logout" class="btn-no-style">Logout</button>
       {{else}}
@@ -40,7 +43,7 @@
         <div class="offcanvas-body">
           <div class='dice-roller'>
             <label class="dice-scroll-down">Pick number of rolls and sides</label>
-              <input class="rolls" type="number" placeholder="number of roles"/>
+            <input class="rolls" type="number" placeholder="number of roles" />
             <select class="die">
               <option value="20">D20</option>
               <option value="12">D12</option>
@@ -48,8 +51,8 @@
               <option value="8">D8</option>
               <option value="6">D6</option>
               <option value="4">D4</option>
-              </select>
-              <button class="dice-roller-button btn">roll my dice</button>
+            </select>
+            <button class="dice-roller-button btn">roll my dice</button>
             <div class="results">results</div>
           </div>
         </div>
@@ -65,7 +68,7 @@
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title" id="exampleModalLabel">Instructions for Character Creation</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <button type="button" class="close btn" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
