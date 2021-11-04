@@ -50,10 +50,12 @@ li.nav-item {
 a {
     color: var(--primary) ;
     transition: ease-in-out 0.5s;
+    text-decoration: none;
 }
 
 nav a:hover,
-a:hover {
+a:hover, 
+li.nav-item:hover {
     color: var(--tertiary);
     transition: ease-in-out 0.5s;
     text-decoration: none;
@@ -116,12 +118,12 @@ button {
     margin: 0 auto;
     padding: 20px;
     border-radius: var(--border-radius);
-    background-color: var(--light);
     color: var(--dark);
     width: 500px;
 }
 
 .card {
+    width: auto;
     margin: 100px auto;
     opacity: 0.8;
     transition: ease-in-out 0.5s;
@@ -134,6 +136,7 @@ button {
 
 .character-card {
     height: 150px;
+    margin: 50px 75px;
 }
 
 .form-col {
@@ -141,7 +144,7 @@ button {
 }
 
 #login-div {
-    background: var(--green-castle);
+    background: var(--dungeon);
     background-size: cover;
     height: 120vh;
 }
@@ -205,6 +208,16 @@ button {
 
 #login-menu {
     background: var(--green-castle);
+    background-size: cover;
+}
+
+#instructions-menu {
+    background: var(--hero-v-dragon);
+    background-size: cover;
+}
+
+#dice-menu {
+    background: var(--dark-castle-army);
     background-size: cover;
 }
 
