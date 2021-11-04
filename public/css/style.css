@@ -158,6 +158,12 @@ button {
     height: 120vh;
 }
 
+#view-div {
+    background: var(--purgatory);
+    background-size: cover;
+    height: 120vh;
+}
+
 .my-characters {
     display: flex;
     flex-wrap: wrap;
