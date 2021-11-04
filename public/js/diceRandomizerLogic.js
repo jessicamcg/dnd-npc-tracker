@@ -1,3 +1,58 @@
+const getRandom = (max) => {
+    return Math.floor(Math.random() * max);
+};
+const nameRandomizer = () => {
+    const firstName = ["Jindo", "Trias", "Myverna", "Ara", "Olerin"];
+    const lastName = ["Enol", "Shemrinan", "Lulnar", "Adrar", "Nollason"];
+    const fullName =
+        firstName[getRandom(firstName.length - 1)] +
+        " " +
+        lastName[getRandom(lastName.length - 1)];
+    return fullName;
+};
+const raceRandomizer = () => {
+    let raceNumber = getRandom(9);
+    console.log(typeof raceNumber)
+    console.log(raceNumber)
+    switch (raceNumber) {
+        case 0:
+            const dragonborn = document.querySelector("#Dragonborn");
+            dragonborn.setAttribute("selected", "");
+            break;
+        case 1:
+            const dwarf = document.querySelector("#Dwarf");
+            dwarf.setAttribute("selected", "");
+            break;
+        case 2:
+            const elf = document.querySelector("#Elf");
+            elf.setAttribute("selected", "");
+            break;
+        case 3:
+            const gnome = document.querySelector("#Gnome");
+            gnome.setAttribute("selected", "");
+            break;
+        case 4:
+            const halfElf = document.querySelector("#Half-Elf");
+            halfElf.setAttribute("selected", "");
+            break;
+        case 5:
+            const halfling = document.querySelector("#Halfling");
+            halfling.setAttribute("selected", "");
+            break;
+        case 6:
+            const halfOrc = document.querySelector("#Half-Orc");
+            halfOrc.setAttribute("selected", "");
+            break;
+        case 7:
+            const human = document.querySelector("#Human");
+            human.setAttribute("selected", "");
+            break;
+        case 8:
+            const tiefling = document.querySelector("#Tiefling");
+            tiefling.setAttribute("selected", "");
+            break;
+    }
+};
 const characterRandomizer = async () => {
     let statArr = [];
     for (let i = 0; i < 6; i++) {
@@ -20,13 +75,16 @@ const characterRandomizer = async () => {
             statArr.push(sum);
         }
     }
-    console.log("finalArr:", statArr);
+    const characterName = document.querySelector("#character-name");
     const strength = document.querySelector("#strength");
     const dexterity = document.querySelector("#dexterity");
     const constitution = document.querySelector("#constitution");
     const intelligence = document.querySelector("#intelligence");
     const wisdom = document.querySelector("#wisdom");
     const charisma = document.querySelector("#charisma");
+    let fullName = nameRandomizer();
+    raceRandomizer()
+    characterName.setAttribute("value", fullName);
     strength.setAttribute("value", statArr[0]);
     dexterity.setAttribute("value", statArr[1]);
     constitution.setAttribute("value", statArr[2]);
