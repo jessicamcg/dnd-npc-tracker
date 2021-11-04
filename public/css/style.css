@@ -24,6 +24,7 @@
 body {
     min-width: 100vh;
     min-height: 100vh;
+    /* overflow: hidden; */
 }
 
 nav {
@@ -36,6 +37,10 @@ nav {
 nav a {
     color: var(--light);
     transition: ease-in-out 0.5;
+}
+
+.navbar {
+    padding: 0.5rem 10rem;
 }
 
 li.nav-item {
@@ -168,4 +173,19 @@ button {
 #login-menu {
     background: var(--green-castle);
     background-size: cover;
+}
+
+@media screen and (max-width: 992px) {
+    aside {
+        float: top;
+        position: relative !important;
+        display: flex;
+        align-items: center;
+        transform: translateY(0%);
+        justify-content: space-around;
+    }
+
+    .character-gallery {
+        width: 100vh;
+    }
 }
