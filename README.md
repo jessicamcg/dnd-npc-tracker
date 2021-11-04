@@ -27,7 +27,7 @@ Live [link](https://dnd-dm-character-tracker.herokuapp.com/) on Heroku
 
 ### Username Validation
 
--   Unique username validation works but user feedback for error cannot differeniate from server issue or non-unique username. Error needs to be parsed in the backend to send appropriate error response.
+-   Unique username validation works but user feedback for error cannot differentiate from server issue or non-unique username. Error needs to be parsed in the backend to send appropriate error response.
 
 ### Character Sheet
 
