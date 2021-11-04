@@ -6,22 +6,26 @@ const diceRoller = async () => {
     const typeofDice = await document.querySelector(".dice-roller_type").value;
     const rollResultHolder = document.createElement("li");
     rollResultHolder.className = "list-group-item";
-    const response = await fetch(`dice/${numberofDice}/${typeofDice}`, {
-        method: "POST",
-    });
-    const diceResult = await response.json();
-    if (resultLabel.classList.contains("no-rolls")) {
-        resultLabel.classList.remove("no-rolls");
-        resultLabel.classList.add("has-rolls");
-    }
-    if (resultsBox.childElementCount > 10) {
-        resultsBox.removeChild(resultsBox.lastChild);
-    }
-    if (diceResult) {
-        rollResultHolder.textContent = diceResult;
-        resultsBox.prepend(rollResultHolder);
+    if (numberofDice) {
+        const response = await fetch(`dice/${numberofDice}/${typeofDice}`, {
+            method: "POST",
+        });
+        const diceResult = await response.json();
+        if (resultLabel.classList.contains("no-rolls")) {
+            resultLabel.classList.remove("no-rolls");
+            resultLabel.classList.add("has-rolls");
+        }
+        if (resultsBox.childElementCount > 10) {
+            resultsBox.removeChild(resultsBox.lastChild);
+        }
+        if (diceResult) {
+            rollResultHolder.textContent = diceResult;
+            resultsBox.prepend(rollResultHolder);
+        } else {
+            alert("Roll failed, there seems to be an issue.");
+        }
     } else {
-        alert("Roll failed, there seems to be an issue.");
+        alert("You cannot roll 0 dice")
     }
 };
 const diceButton = document.querySelector(".dice-roller-button");

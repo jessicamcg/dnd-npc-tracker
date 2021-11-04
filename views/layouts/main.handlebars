@@ -38,12 +38,13 @@
       </button>
       <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
         <div class="offcanvas-header">
-          <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Dice Roller</h5>
+          <h5 class="offcanvas-title display-4" id="offcanvasNavbarLabel">Dice Roller</h5>
           <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body">
           <div class='dice-roller'>
-            <label class="dice-roller_header">Select number of dice and type of dice</label>
+            <label class="dice-roller_header mb-2">Select dice number and type</label>
+            <div class="dice-roller_options">
             <input class="dice-roller_number" type="number" placeholder="Number of Dice" />
             <select class="dice-roller_type">
               <option value="20">D20</option>
@@ -53,9 +54,12 @@
               <option value="6">D6</option>
               <option value="4">D4</option>
             </select>
-            <button class="dice-roller-button btn">Roll</button>
-            <label for="results" class="dice-roller_newest no-rolls">Newest Roll:</label>
+            <button class="dice-roller-button btn mt-1">Roll</button>
+            </div>
+            <div class="dice-roller_results mt-2">
+            <label for="results" class="dice-roller_newest no-rolls mt-2 mb-2">Newest Roll:</label>
             <ul class="results list-group"></ul>
+            </div>
           </div>
         </div>
       </div>
