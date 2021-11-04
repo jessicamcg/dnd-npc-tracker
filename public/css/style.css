@@ -5,6 +5,8 @@
     --quatrinary: #6c6b67;
     --light: #e3e4e3;
     --dark: #182c23;
+
+    --table: url("https://cdn.discordapp.com/attachments/886473171631472690/905667959345799208/dana-devolk-JBqC2n_0zHM-unsplash.jpg");
     /* light images */
     --mountain1: url("https://cdn.discordapp.com/attachments/886473171631472690/905578439350837298/birmingham-museums-trust-RRn7VvZCbas-unsplash.jpg") no-repeat center center;
     --mountain2: url("https://cdn.discordapp.com/attachments/886473171631472690/905578427862646784/birmingham-museums-trust-wKlHsooRVbg-unsplash.jpg") no-repeat center center;
@@ -24,28 +26,30 @@
 body {
     min-width: 100vh;
     min-height: 100vh;
+    /* overflow: hidden; */
 }
 
 nav {
-    background: var(--dark);
-    position: fixed !important; 
-    z-index: 100 !important;
-    width: 100% !important;
+    background: var(--primary);
 }
 
 nav a {
-    color: var(--light);
+    color: var(--light) !important;
     transition: ease-in-out 0.5;
 }
 
+.navbar {
+    padding: 0.5rem 10rem;
+}
+
 li.nav-item {
-    justify-content: center;
-    align-items: center;
-    display: flex;
+    list-style-type: none;
+    color: var(--primary) ;
+    transition: ease-in-out 0.5s;
 }
 
 a {
-    color: var(--primary);
+    color: var(--primary) ;
     transition: ease-in-out 0.5s;
 }
 
@@ -65,24 +69,26 @@ main {
 
 aside {
     display: flex;
+    align-content: center;
+    justify-content: center;
     padding: 10px;
     text-align: left;
-    /* margin-right: 100px; */
+    background: var(--table);
+    background-size: cover;
     border-width: 10px;
-    position: sticky !important;
-    top: 20%;
-    height: 100vh;
-    transform: translateY(20%);
-    height: 500px;
+}
+
+.dice-roller {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
 }
 
 .character-gallery{
     padding: 50px 0px 0px 0px;
-    /* background: var(--mountain1);
-    background-size: cover; */
     min-width: 100vh;
     min-height: 120vh;
-
 }
 
 h2 {
@@ -113,6 +119,7 @@ button {
     border-radius: var(--border-radius);
     background-color: var(--light);
     color: var(--dark);
+    width: 500px;
 }
 
 .card {
@@ -126,6 +133,14 @@ button {
     transition: ease-in-out 0.5s;
 }
 
+.character-card {
+    height: 150px;
+}
+
+.form-col {
+    display: flex;
+}
+
 #login-div {
     background: var(--green-castle);
     background-size: cover;
@@ -136,6 +151,30 @@ button {
     background: var(--red-dragon);
     background-size: cover;
     height: 120vh;
+}
+
+#create-div {
+    background: var(--bard);
+    background-size: cover;
+    height: 120vh;
+}
+
+#view-div {
+    background: var(--purgatory);
+    background-size: cover;
+    height: 120vh;
+}
+
+.my-characters {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: -100px;
+    background: var(--witch-house);
+    background-size: cover;
+    height: 120vh;
+    padding-top: 100px;
+    justify-content: center;
+    align-content: center;
 }
 
 .menu-card {
@@ -168,4 +207,22 @@ button {
 #login-menu {
     background: var(--green-castle);
     background-size: cover;
+}
+
+@media screen and (max-width: 992px) {
+    .navbar {
+        padding: 0.5rem 1rem;
+    }
+    
+    aside {
+        float: top;
+        position: relative !important;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    .character-gallery {
+        width: 100vh;
+    }
 }
