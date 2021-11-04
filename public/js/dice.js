@@ -1,7 +1,6 @@
 const diceRoller = async () => {
     const resultLabel = document.querySelector(".dice-roller_newest");
     const resultsBox = document.querySelector(".results");
-
     const numberofDice = await document.querySelector(".dice-roller_number")
         .value;
     const typeofDice = await document.querySelector(".dice-roller_type").value;
@@ -25,6 +24,5 @@ const diceRoller = async () => {
         alert("Roll failed, there seems to be an issue.");
     }
 };
-
 const diceButton = document.querySelector(".dice-roller-button");
 diceButton.addEventListener("click", diceRoller);
