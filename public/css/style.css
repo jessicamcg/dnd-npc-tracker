@@ -206,37 +206,44 @@ button {
 #login-div {
     background: var(--dungeon);
     background-size: cover;
-    height: 120vh;
+    height: 100%;
+    width: 100%;
 }
 
 #signup-div {
     background: var(--red-dragon);
     background-size: cover;
     height: 120vh;
+    height: 100%;
+    width: 100%;
 }
 
 #create-div {
     background: var(--bard);
     background-size: cover;
     height: 120vh;
+    height: 100%;
+    width: 100%;
 }
 
 #view-div {
     background: var(--purgatory);
     background-size: cover;
     height: 120vh;
+    height: 100%;
+    width: 100%;
 }
 
 .my-characters {
-    display: flex;
     flex-wrap: wrap;
     margin-top: -100px;
     background: var(--witch-house);
     background-size: cover;
-    height: 120vh;
     padding-top: 100px;
     justify-content: center;
     align-content: center;
+    height: 100%;
+    width: 100%;
 }
 
 .menu-card {
@@ -284,14 +291,6 @@ button {
 @media screen and (max-width: 992px) {
     .navbar {
         padding: 0.5rem 1rem;
-    }
-
-    aside {
-        float: top;
-        position: relative !important;
-        display: flex;
-        align-items: center;
-        justify-content: space-around;
     }
 
     .character-gallery {
