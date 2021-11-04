@@ -118,6 +118,7 @@ button {
     border-radius: var(--border-radius);
     background-color: var(--light);
     color: var(--dark);
+    width: 500px;
 }
 
 .card {
@@ -131,6 +132,10 @@ button {
     transition: ease-in-out 0.5s;
 }
 
+#character-creation-form {
+    display: flex;
+}
+
 #login-div {
     background: var(--green-castle);
     background-size: cover;
@@ -139,6 +144,12 @@ button {
 
 #signup-div {
     background: var(--red-dragon);
+    background-size: cover;
+    height: 120vh;
+}
+
+#create-div {
+    background: var(--bard);
     background-size: cover;
     height: 120vh;
 }
@@ -176,6 +187,10 @@ button {
 }
 
 @media screen and (max-width: 992px) {
+    .navbar {
+        padding: 0.5rem 1rem;
+    }
+    
     aside {
         float: top;
         position: relative !important;
