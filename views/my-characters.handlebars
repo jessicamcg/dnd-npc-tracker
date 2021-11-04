@@ -1,5 +1,7 @@
-<div class="my-characters">
-    {{#each characters as |character|}}
-    {{> character-cards}}
-    {{/each}}
+<div id="my-char-div" class="col-12">
+    <div class="my-characters d-flex flex-wrap justify-content-center">
+        {{#each characters as |character|}}
+        {{> character-cards}}
+        {{/each}}
+    </div>
 </div>
