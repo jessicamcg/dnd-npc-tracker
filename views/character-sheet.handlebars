@@ -2,6 +2,10 @@
     <div class="row justify-space-between-md">
         <div class="card">
             <form action="#" id="character-view-form">
+                <div class="form-group mb-3 d-flex justify-space-center">
+                    <label for="name" name="name">Character Name:</label>
+                    <input type="text" placeholder="Character Name" id="character-name" required />
+                </div>
                 <div class="form-col">
                     <div class="col-6 d-flex flex-column form-spacing">
                         <div class="form-group">
@@ -28,68 +32,76 @@
                                 <option value="No" id="met-party_no">No</option>
                                 <option value="Yes" id="met-party_yes">Yes</option>
                             </select>
-                            <div class="form-group">
-                                <label for="class" name="class">Class:</label>
-                                <select name="class" id="character-class">
-                                    <option value="null" id="no-class">Unselected</option>
-                                    <option value="Barbarian" id="Barbarian">Barbarian</option>
-                                    <option value="Bard" id="Bard">Bard</option>
-                                    <option value="Cleric" id="Cleric">Cleric</option>
-                                    <option value="Druid" id="Druid">Druid</option>
-                                    <option value="Fighter" id="Fighter">Fighter</option>
-                                    <option value="Monk" id="Monk">Monk</option>
-                                    <option value="Paladin" id="Paladin">Paladin</option>
-                                    <option value="Ranger" id="Ranger">Ranger</option>
-                                    <option value="Rogue" id="Rogue">Rogue</option>
-                                    <option value="Sorceror" id="Sorceror">Sorceror</option>
-                                    <option value="Warlock" id="Warlock">Warlock</option>
-                                    <option value="Wizard" id="Wizard">Wizard</option>
-                                </select>
-                            </div>
                         </div>
-                        <textarea id="notes" class="form-input" type="text"
-                            placeholder="Write any relevant notes for your character here"></textarea>
+                        <div class="form-group">
+                            <label for="class" name="class">Class:</label>
+                            <select name="class" id="character-class">
+                                <option value="null" id="no-class">Unselected</option>
+                                <option value="Barbarian" id="Barbarian">Barbarian</option>
+                                <option value="Bard" id="Bard">Bard</option>
+                                <option value="Cleric" id="Cleric">Cleric</option>
+                                <option value="Druid" id="Druid">Druid</option>
+                                <option value="Fighter" id="Fighter">Fighter</option>
+                                <option value="Monk" id="Monk">Monk</option>
+                                <option value="Paladin" id="Paladin">Paladin</option>
+                                <option value="Ranger" id="Ranger">Ranger</option>
+                                <option value="Rogue" id="Rogue">Rogue</option>
+                                <option value="Sorceror" id="Sorceror">Sorceror</option>
+                                <option value="Warlock" id="Warlock">Warlock</option>
+                                <option value="Wizard" id="Wizard">Wizard</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="notes">Notes:</label>
+                            <textarea id="notes" class="form-input" type="text"
+                                placeholder="Write any relevant notes for your character here"></textarea>
+                        </div>
                     </div>
+
+
                     <div class="col-6 ms-3">
                         <div class="form-floating mb-3">
                             <input class="stats form-control" id="strength" type="number" placeholder="strength" />
                             <label for="floatingInput">Strength</label>
                             <p>Modifier: <span for="strength" id="strength-label"></span></p>
-                            
+
                         </div>
                         <div class="form-floating mb-3">
                             <input class="stats form-control" id="dexterity" type="number" placeholder="dexterity" />
                             <label for="dexterity">Dexterity:</label>
-                            <span for="dexterity" id="dexterity-label"></span>
+                            <p>Modifier: <span for="dexterity" id="dexterity-label"></span></p>
                         </div>
                         <div class="form-floating mb-3">
-                            <input class="stats form-control" id="constitution" type="number" placeholder="constitution" />
+                            <input class="stats form-control" id="constitution" type="number"
+                                placeholder="constitution" />
                             <label for="floatingInput">Constitution:</label>
-                            <span for="constitution" id="constitution-label"></span>
+                            <p>Modifier: <span for="constitution" id="constitution-label"></span></p>
                         </div>
                         <div class="form-floating mb-3">
-                            <input class="stats form-control" id="intelligence" type="number" placeholder="intelligence" />
+                            <input class="stats form-control" id="intelligence" type="number"
+                                placeholder="intelligence" />
                             <label for="floatingInput">Intelligence:</label>
-                            <span for="intelligence" id="intelligence-label"></span>
+                            <p>Modifier: <span for="intelligence" id="intelligence-label"></span></p>
                         </div>
                         <div class="form-floating mb-3">
                             <input class="stats form-control" id="wisdom" type="number" placeholder="wisdom" />
                             <label for="floatingInput">Wisdom:</label>
-                            <span for="wisdom" id="wisdom-label"></span>
+                            <p>Modifier: <span for="wisdom" id="wisdom-label"></span></p>
                         </div>
                         <div class="form-floating mb-3">
                             <input class="stats form-control" id="charisma" type="number" placeholder="charisma" />
                             <label for="floatingInput">Charisma:</label>
-                            <span for="charisma" id="charisma-label"></span>
+                            <p>Modifier: <span for="charisma" id="charisma-label"></span></p>
                         </div>
                     </div>
                 </div>
                 <div class="col-12 d-flex justify-content-center submit-btn">
                     <button class="btn" type="submit">Update Character</button>
                 </div>
-            </form>
         </div>
+        </form>
     </div>
+</div>
 </div>
 
 <script src="/js/characterViewAndUpdate.js"></script>
