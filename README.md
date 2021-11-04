@@ -25,6 +25,10 @@ Live [link](https://dnd-dm-character-tracker.herokuapp.com/) on Heroku
 
 ## Further Development
 
+### Dice Limit
+
+-   Need to add a realistice dice limit
+
 ### Username Validation
 
 -   Unique username validation works but user feedback for error cannot differeniate from server issue or non-unique username. Error needs to be parsed in the backend to send appropriate error response.
@@ -33,12 +37,12 @@ Live [link](https://dnd-dm-character-tracker.herokuapp.com/) on Heroku
 
 -   HP can be calculated and then displayed on character sheets based off class, level, and constitution.
 -   Racial and class bonuses added to attribute modifiers
--   Input field for gender 
+-   Input field for gender
 -   Area to select avatar and picture
 -   Armor class selection based off armor type
 -   Inventory management
 -   Location input field
--   More specific character identifiers rather than a catch all of notes 
+-   More specific character identifiers rather than a catch all of notes
 
 ### Card Manipulation
 
