@@ -1,7 +1,6 @@
 const dice_button = document.querySelector('.dice-roller-button')
 const results = document.querySelector('.results')
 
-
 async function getEL(){
 const numberOfRolls = await document.querySelector('.rolls').value;
 const dice = await document.querySelector('.die').value;
