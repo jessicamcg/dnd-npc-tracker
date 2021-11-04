@@ -12,8 +12,8 @@ const nameRandomizer = () => {
 };
 const raceRandomizer = () => {
     let raceNumber = getRandom(9);
-    console.log(typeof raceNumber)
-    console.log(raceNumber)
+    console.log(typeof raceNumber);
+    console.log(raceNumber);
     switch (raceNumber) {
         case 0:
             const dragonborn = document.querySelector("#Dragonborn");
@@ -53,6 +53,59 @@ const raceRandomizer = () => {
             break;
     }
 };
+const classRandomizer = () => {
+    let classNumber = getRandom(11);
+    switch (classNumber) {
+        case 0:
+            const barbarian = document.querySelector("#Barbarian");
+            barbarian.setAttribute("selected", "");
+            break;
+        case 1:
+            const bard = document.querySelector("#Bard");
+            bard.setAttribute("selected", "");
+            break;
+        case 2:
+            const cleric = document.querySelector("#Cleric");
+            cleric.setAttribute("selected", "");
+            break;
+        case 3:
+            const druid = document.querySelector("#Druid");
+            druid.setAttribute("selected", "");
+            break;
+        case 4:
+            const fighter = document.querySelector("#Fighter");
+            fighter.setAttribute("selected", "");
+            break;
+        case 5:
+            const monk = document.querySelector("#Monk");
+            monk.setAttribute("selected", "");
+            break;
+        case 6:
+            const paladin = document.querySelector("#Paladin");
+            paladin.setAttribute("selected", "");
+            break;
+        case 7:
+            const ranger = document.querySelector("#Ranger");
+            ranger.setAttribute("selected", "");
+            break;
+        case 8:
+            const rogue = document.querySelector("#Rogue");
+            rogue.setAttribute("selected", "");
+            break;
+        case 9:
+            const sorceror = document.querySelector("#Sorceror");
+            sorceror.setAttribute("selected", "");
+            break;
+        case 10:
+            const warlock = document.querySelector("#Warlock");
+            warlock.setAttribute("selected", "");
+            break;
+        case 11:
+            const wizard = document.querySelector("#Wizard");
+            wizard.setAttribute("selected", "");
+            break;
+    }
+};
 const characterRandomizer = async () => {
     let statArr = [];
     for (let i = 0; i < 6; i++) {
@@ -83,7 +136,8 @@ const characterRandomizer = async () => {
     const wisdom = document.querySelector("#wisdom");
     const charisma = document.querySelector("#charisma");
     let fullName = nameRandomizer();
-    raceRandomizer()
+    raceRandomizer();
+    classRandomizer();
     characterName.setAttribute("value", fullName);
     strength.setAttribute("value", statArr[0]);
     dexterity.setAttribute("value", statArr[1]);
