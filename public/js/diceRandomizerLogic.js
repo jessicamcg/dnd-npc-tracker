@@ -12,8 +12,6 @@ const nameRandomizer = () => {
 };
 const raceRandomizer = () => {
     let raceNumber = getRandom(9);
-    console.log(typeof raceNumber);
-    console.log(raceNumber);
     switch (raceNumber) {
         case 0:
             const dragonborn = document.querySelector("#Dragonborn");
@@ -112,7 +110,6 @@ const characterRandomizer = async () => {
         const response = await fetch("dice/random/4/6", {
             method: "POST",
         });
-        // console.log(response)
         let singleArr = [];
         const responseParsed = await response.json();
         if (responseParsed) {
