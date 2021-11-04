@@ -6,7 +6,6 @@
     integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="/css/style.css" />
 </head>
-
 <body>
   <nav class="navbar navbar-light fixed-top">
     <div class="container-fluid">
@@ -37,14 +36,14 @@
       </button>
       <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
         <div class="offcanvas-header">
-          <h5 class="offcanvas-title" id="offcanvasNavbarLabel">DND Character Tracker</h5>
+          <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Dice Roller</h5>
           <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body">
           <div class='dice-roller'>
-            <label class="dice-scroll-down">Pick number of rolls and sides</label>
-              <input class="rolls" type="number" placeholder="number of rolls"/>
-            <select class="die">
+            <label class="dice-roller_header">Select number of dice and type of dice</label>
+            <input class="dice-roller_number" type="number" placeholder="Number of Dice" />
+            <select class="dice-roller_type">
               <option value="20">D20</option>
               <option value="12">D12</option>
               <option value="10">D10</option>
@@ -52,14 +51,14 @@
               <option value="6">D6</option>
               <option value="4">D4</option>
             </select>
-            <button class="dice-roller-button btn">roll my dice</button>
-            <div class="results">results</div>
+            <button class="dice-roller-button btn">Roll</button>
+            <label for="results" class="dice-roller_newest no-rolls">Newest Roll:</label>
+            <ul class="results list-group"></ul>
           </div>
         </div>
       </div>
     </div>
   </nav>
-
   <main class="row">
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="1" role="dialog" aria-labelledby="exampleModalLabel"
@@ -95,9 +94,6 @@
       </div>
     </div>
     {{!-- modal --}}
-
-
-
     <div class="character-gallery col-12">
       {{{body}}}
     </div>
