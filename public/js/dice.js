@@ -6,7 +6,7 @@ const diceRoller = async () => {
     const typeofDice = await document.querySelector(".dice-roller_type").value;
     const rollResultHolder = document.createElement("li");
     rollResultHolder.className = "list-group-item";
-    if (numberofDice && numberofDice <= 100) {
+    if (numberofDice > 0 && numberofDice <= 100) {
         const response = await fetch(`dice/${numberofDice}/${typeofDice}`, {
             method: "POST",
         });
