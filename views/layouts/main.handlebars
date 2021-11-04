@@ -1,131 +1,108 @@
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>DND Character Tracker</title>
-        <link
-            rel="stylesheet"
-            href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-            crossorigin="anonymous"
-        />
-        <link rel="stylesheet" type="text/css" href="/css/style.css" />
-    </head>
-    <body>
-        <nav class="navbar navbar-expand-lg sticky-sm-top">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="/">DND Character Tracker</a>
-                <li class="nav-item">
-                    <a class="nav-link" href="/character-create">Create a new
-                        character</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/my-characters">My characters</a>
-                </li>
-            <!-- Button trigger modal -->
-                <button
-                    type="button"
-                    class="btn-no-style"
-                    data-toggle="modal"
-                    data-target="#exampleModal"
-                >
-                    Instructions
-                </button>
-                {{#if loggedIn}}
-                    <button id="logout" class="btn-no-style">Logout</button>
-                {{else}}
-                    <li class="nav-item">
-                        <a class="nav-link" href="/login">Login</a>
-                    </li>
-                {{/if}}
-            </div>
-        </nav>
-        <main class="row">
-            <!-- Modal -->
-            <div
-                class="modal fade"
-                id="exampleModal"
-                tabindex="1"
-                role="dialog"
-                aria-labelledby="exampleModalLabel"
-                aria-hidden="true"
-            >
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Instructions for Character Creation</h5>
-                            <button
-                                type="button"
-                                class="close"
-                                data-dismiss="modal"
-                                aria-label="Close"
-                            >
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            <p class='modal-body_welcome'>Welcome to our dnd character tracker built for DMs!</p> 
-                            <ol class="modal-body_ol">
-                              <li class="modal-body_list">Choose a character name, make sure you like it!</li>
-                              <li class="modal-body_list">Select a race from the dropdown menu. You can read more about the differences between them <a href="https://www.dndbeyond.com/races">here!</a></li>
-                              <li class="modal-body_list">Has your NPC character met the party yet?</li>
-                              <li class="modal-body_list">Select a class from the dropwdown menu. You can read more about the difference classes <a href="https://www.dndbeyond.com/classes">here!</a></li>
-                              <li class="modal-body_list">For your character stats, roll 4, 6 sided dice (4d6), remove the lowest value, and assign the total remaining into a stat of your choosing.</li>
-                              <li class="modal-body_list">Write any notes you want to keep track of for your character in the text area</li>
-                              <li class="modal-body_list">Press the create character button when finished!</li>
-                            </ol>
-                        </div>
-                        <div class="modal-footer">
-                            <button
-                                type="button"
-                                class="btn btn-secondary"
-                                data-dismiss="modal"
-                            >Close</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            {{!-- modal --}}
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DND Character Tracker</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="/css/style.css" />
+</head>
 
-        <aside class="col-12 col-lg-3">
-          <div class='dice-roller'>
-            <label class="dice-scroll-down">Pick number of rolls and sides</label>
-              <input class="rolls" type="number" placeholder="number of roles"/>
-            <select class="die">
-              <option value="20">D20</option>
-              <option value="12">D12</option>
-              <option value="10">D10</option>
-              <option value="8">D8</option>
-              <option value="6">D6</option>
-              <option value="4">D4</option>
-              </select>
-              <button class="dice-roller-button btn">roll my dice</button>
-            <div class="results">results</div>
-          </div>
-        </aside>
-
-        <div class="character-gallery col-12 col-lg-9">
-          {{{body}}}
+<body>
+  <nav class="navbar navbar-light bg-light fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/">DND Character Tracker</a>
+      <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="#">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/character-create">Create a new
+          character</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/my-characters">My characters</a>
+      </li>
+      {{#if loggedIn}}
+      <button id="logout" class="btn-no-style">Logout</button>
+      {{else}}
+      <li class="nav-item">
+        <a class="nav-link" href="/login">Login</a>
+      </li>
+      {{/if}}
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+        aria-controls="offcanvasNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasNavbarLabel">DND Character Tracker</h5>
+          <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
+        <div class="offcanvas-body">
 
-        </main>
-        {{#if loggedIn}}
-            <script src="/js/logout.js"></script>
-        {{/if}}
-        <script
-            src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-            crossorigin="anonymous"
-        ></script>
-        <script
-            src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-            crossorigin="anonymous"
-        ></script>
-        <script
-            src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-            crossorigin="anonymous"
-        ></script>
-        <script src="/js/dice.js"></script>
-    </body>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="row">
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="1" role="dialog" aria-labelledby="exampleModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Instructions for Character Creation</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p class='modal-body_welcome'>Welcome to our dnd character tracker built for DMs!</p>
+            <ol class="modal-body_ol">
+              <li class="modal-body_list">Choose a character name, make sure you like it!</li>
+              <li class="modal-body_list">Select a race from the dropdown menu. You can read more about the differences
+                between them <a href="https://www.dndbeyond.com/races">here!</a></li>
+              <li class="modal-body_list">Has your NPC character met the party yet?</li>
+              <li class="modal-body_list">Select a class from the dropwdown menu. You can read more about the difference
+                classes <a href="https://www.dndbeyond.com/classes">here!</a></li>
+              <li class="modal-body_list">For your character stats, roll 4, 6 sided dice (4d6), remove the lowest value,
+                and assign the total remaining into a stat of your choosing.</li>
+              <li class="modal-body_list">Write any notes you want to keep track of for your character in the text area
+              </li>
+              <li class="modal-body_list">Press the create character button when finished!</li>
+            </ol>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    {{!-- modal --}}
+
+
+
+    <div class="character-gallery col-12">
+      {{{body}}}
+    </div>
+
+  </main>
+  {{#if loggedIn}}
+  <script src="/js/logout.js"></script>
+  {{/if}}
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <script src="/js/dice.js"></script>
+</body>
+
 </html>

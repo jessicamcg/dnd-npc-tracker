@@ -29,12 +29,12 @@ body {
     /* overflow: hidden; */
 }
 
-nav {
+/* nav {
     background: var(--dark);
     position: fixed !important; 
     z-index: 100 !important;
     width: 100% !important;
-}
+} */
 
 nav a {
     color: var(--light);
@@ -45,11 +45,11 @@ nav a {
     padding: 0.5rem 10rem;
 }
 
-li.nav-item {
+/* li.nav-item {
     justify-content: center;
     align-items: center;
     display: flex;
-}
+} */
 
 a {
     color: var(--primary);
@@ -72,6 +72,8 @@ main {
 
 aside {
     display: flex;
+    align-content: center;
+    justify-content: center;
     padding: 10px;
     text-align: left;
     background: var(--table);
@@ -80,18 +82,16 @@ aside {
 }
 
 .dice-roller {
-    position: sticky !important;
-    top: 20%;
-    transform: translateY(20%);
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
 }
 
 .character-gallery{
     padding: 50px 0px 0px 0px;
-    /* background: var(--mountain1);
-    background-size: cover; */
     min-width: 100vh;
     min-height: 120vh;
-
 }
 
 h2 {
@@ -222,7 +222,6 @@ button {
         position: relative !important;
         display: flex;
         align-items: center;
-        transform: translateY(0%);
         justify-content: space-around;
     }
 
