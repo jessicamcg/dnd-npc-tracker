@@ -6,7 +6,7 @@ const diceRoller = async () => {
     const typeofDice = await document.querySelector(".dice-roller_type").value;
     const rollResultHolder = document.createElement("li");
     rollResultHolder.className = "list-group-item";
-    if (numberofDice) {
+    if (numberofDice && numberofDice <= 100) {
         const response = await fetch(`dice/${numberofDice}/${typeofDice}`, {
             method: "POST",
         });
@@ -25,7 +25,7 @@ const diceRoller = async () => {
             alert("Roll failed, there seems to be an issue.");
         }
     } else {
-        alert("You cannot roll 0 dice")
+        alert("You must roll more than 0 dice or 100 dice or less")
     }
 };
 const diceButton = document.querySelector(".dice-roller-button");
