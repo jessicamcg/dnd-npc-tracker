@@ -5,6 +5,8 @@
     --quatrinary: #6c6b67;
     --light: #e3e4e3;
     --dark: #182c23;
+
+    --table: url("https://cdn.discordapp.com/attachments/886473171631472690/905667959345799208/dana-devolk-JBqC2n_0zHM-unsplash.jpg");
     /* light images */
     --mountain1: url("https://cdn.discordapp.com/attachments/886473171631472690/905578439350837298/birmingham-museums-trust-RRn7VvZCbas-unsplash.jpg") no-repeat center center;
     --mountain2: url("https://cdn.discordapp.com/attachments/886473171631472690/905578427862646784/birmingham-museums-trust-wKlHsooRVbg-unsplash.jpg") no-repeat center center;
@@ -72,13 +74,15 @@ aside {
     display: flex;
     padding: 10px;
     text-align: left;
-    /* margin-right: 100px; */
+    background: var(--table);
+    background-size: cover;
     border-width: 10px;
+}
+
+.dice-roller {
     position: sticky !important;
     top: 20%;
-    height: 100vh;
     transform: translateY(20%);
-    height: 500px;
 }
 
 .character-gallery{
