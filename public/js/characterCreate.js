@@ -1,5 +1,6 @@
 const characterCreate = async (event) => {
     event.preventDefault();
+    console.log('click');
     const characterName = document.querySelector("#character-name").value.trim();
     const characterRace = document.querySelector("#race-select").value.trim();
     const characterMetParty = document.querySelector("#character-met-party").value.trim();
@@ -32,7 +33,7 @@ const characterCreate = async (event) => {
         });
 
         if (response.ok) {
-            document.location.replace("/");
+            document.location.replace("/my-characters");
         } else {
             alert("Character creation failed");
         }
