@@ -199,6 +199,10 @@ button {
     display: flex;
 }
 
+#notes {
+    height: 200px;
+}
+
 #login-div {
     background: var(--dungeon);
     background-size: cover;

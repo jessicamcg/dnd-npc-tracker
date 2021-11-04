@@ -3,15 +3,14 @@
         <div class="card">
             <button class="character-creation-form_randomizer btn">Randomize Character</button>
             <form action="#" id="character-creation-form" class="form">
+                <div class="form-floating mb-3">
+                    <input type="text" placeholder="Character Name" id="character-name" class="form-control" required />
+                    <label for="floatingInput" name="name">Character Name:</label>
+                </div>
                 <div class="form-col">
                     <div class="col-6 d-flex flex-column form-spacing">
-                        <div class="form-group">
-                            <label for="name" name="name">Character Name:</label>
-                            <input type="text" placeholder="Character Name" id="character-name" required />
-                        </div>
-                        <div class="form-group">
-                            <label for="race" name="race">Choose a race:</label>
-                            <select name="race_select" id="race-select" required>
+                        <div class="form-floating">
+                            <select name="race_select" id="race-select" class="form-select" required>
                                 <option value="Dragonborn" id="Dragonborn">Dragonborn</option>
                                 <option value="Dwarf" id="Dwarf">Dwarf</option>
                                 <option value="Elf" id="Elf">Elf</option>
@@ -22,18 +21,18 @@
                                 <option value="Human" id="Human">Human</option>
                                 <option value="Tiefling" id="Tiefling">Tiefling</option>
                             </select>
+                            <label for="race" name="race">Choose a race:</label>
                         </div>
-                        <div class="form-group">
-                            <label for="met_party" name="met_party">Have they met the party
-                                yet?</label>
-                            <select name="met_party" id="character-met-party" required>
+                        <div class="form-floating">
+                            <select name="met_party" id="character-met-party" class="form-select" required>
                                 <option value="No">No</option>
                                 <option value="Yes">Yes</option>
                             </select>
+                            <label for="met_party" name="met_party">Have they met the party
+                                yet?</label>
                         </div>
-                        <div class="form-group">
-                            <label for="class" name="class">Choose a class:</label>
-                            <select name="class" id="character-class">
+                        <div class="form-floating">
+                            <select name="class" id="character-class" class="form-select">
                                 <option value="null" id="no-class">Unselected</option>
                                 <option value="Barbarian" id="Barbarian">Barbarian</option>
                                 <option value="Bard" id="Bard">Bard</option>
@@ -48,11 +47,12 @@
                                 <option value="Warlock" id="Warlock">Warlock</option>
                                 <option value="Wizard" id="Wizard">Wizard</option>
                             </select>
+                            <label for="class" name="class">Choose a class:</label>
                         </div>
-                        <div class="d-flex flex-column">
-                            <label for="notes">Notes:</label>
-                            <textarea id="notes" class="form-input" type="text"
+                        <div class="d-flex flex-column form-floating">
+                            <textarea id="notes" class="form-input form-control" type="text"
                                 placeholder="Write any relevant notes for your character here"></textarea>
+                            <label for="notes">Notes:</label>
                         </div>
                     </div>
                     <div class="col-6 ms-3">
