@@ -3,83 +3,87 @@
         <div class="card">
             <form action="#" id="character-view-form">
                 <div class="form-col">
-                    <div class="col-6">
+                    <div class="col-6 d-flex flex-column form-spacing">
                         <div class="form-group">
                             <label for="name" name="name">Character Name:</label>
                             <input type="text" placeholder="Character Name" id="character-name" required />
                         </div>
-                        <label for="race" name="race">Race:</label>
-                        <select name="race_select" id="race-select" required>
-                            <option value="Dragonborn" id="Dragonborn">Dragonborn</option>
-                            <option value="Dwarf" id="Dwarf">Dwarf</option>
-                            <option value="Elf" id="Elf">Elf</option>
-                            <option value="Gnome" id="Gnome">Gnome</option>
-                            <option value="Half-Elf" id="Half-Elf">Half-Elf</option>
-                            <option value="Halfling" id="Halfling">Halfling</option>
-                            <option value="Half-Orc" id="Half-Orc">Half-Orc</option>
-                            <option value="Human" id="Human">Human</option>
-                            <option value="Tiefling" id="Tiefling">Tiefling</option>
-                        </select>
-                        <label for="met_party" name="met_party">Have they met the party yet?</label>
-                        <select name="met_party" id="character-met-party" required>
-                            <option value="No" id="met-party_no">No</option>
-                            <option value="Yes" id="met-party_yes">Yes</option>
-                        </select>
-                        <label for="class" name="class">Class:</label>
-                        <select name="class" id="character-class">
-                            <option value="null" id="no-class">Unselected</option>
-                            <option value="Barbarian" id="Barbarian">Barbarian</option>
-                            <option value="Bard" id="Bard">Bard</option>
-                            <option value="Cleric" id="Cleric">Cleric</option>
-                            <option value="Druid" id="Druid">Druid</option>
-                            <option value="Fighter" id="Fighter">Fighter</option>
-                            <option value="Monk" id="Monk">Monk</option>
-                            <option value="Paladin" id="Paladin">Paladin</option>
-                            <option value="Ranger" id="Ranger">Ranger</option>
-                            <option value="Rogue" id="Rogue">Rogue</option>
-                            <option value="Sorceror" id="Sorceror">Sorceror</option>
-                            <option value="Warlock" id="Warlock">Warlock</option>
-                            <option value="Wizard" id="Wizard">Wizard</option>
-                        </select>
-
-
+                        <div class="form-group">
+                            <label for="race" name="race">Race:</label>
+                            <select name="race_select" id="race-select" required>
+                                <option value="Dragonborn" id="Dragonborn">Dragonborn</option>
+                                <option value="Dwarf" id="Dwarf">Dwarf</option>
+                                <option value="Elf" id="Elf">Elf</option>
+                                <option value="Gnome" id="Gnome">Gnome</option>
+                                <option value="Half-Elf" id="Half-Elf">Half-Elf</option>
+                                <option value="Halfling" id="Halfling">Halfling</option>
+                                <option value="Half-Orc" id="Half-Orc">Half-Orc</option>
+                                <option value="Human" id="Human">Human</option>
+                                <option value="Tiefling" id="Tiefling">Tiefling</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="met_party" name="met_party">Have they met the party yet?</label>
+                            <select name="met_party" id="character-met-party" required>
+                                <option value="No" id="met-party_no">No</option>
+                                <option value="Yes" id="met-party_yes">Yes</option>
+                            </select>
+                            <div class="form-group">
+                                <label for="class" name="class">Class:</label>
+                                <select name="class" id="character-class">
+                                    <option value="null" id="no-class">Unselected</option>
+                                    <option value="Barbarian" id="Barbarian">Barbarian</option>
+                                    <option value="Bard" id="Bard">Bard</option>
+                                    <option value="Cleric" id="Cleric">Cleric</option>
+                                    <option value="Druid" id="Druid">Druid</option>
+                                    <option value="Fighter" id="Fighter">Fighter</option>
+                                    <option value="Monk" id="Monk">Monk</option>
+                                    <option value="Paladin" id="Paladin">Paladin</option>
+                                    <option value="Ranger" id="Ranger">Ranger</option>
+                                    <option value="Rogue" id="Rogue">Rogue</option>
+                                    <option value="Sorceror" id="Sorceror">Sorceror</option>
+                                    <option value="Warlock" id="Warlock">Warlock</option>
+                                    <option value="Wizard" id="Wizard">Wizard</option>
+                                </select>
+                            </div>
+                        </div>
                         <textarea id="notes" class="form-input" type="text"
                             placeholder="Write any relevant notes for your character here"></textarea>
                     </div>
-                    <div class="col-6">
-                        <div class="stat-holder form-group">
-                            <label for="strength">Strength:</label>
-                            <input class="stats" id="strength" type="number" placeholder="strength" />
-                            <label for="strength" id="strength-label"></label>
+                    <div class="col-6 ms-3">
+                        <div class="form-floating mb-3">
+                            <input class="stats form-control" id="strength" type="number" placeholder="strength" />
+                            <label for="floatingInput">Strength</label>
+                            <p for="strength" id="strength-label"></p>
                         </div>
-                        <div class="stat-holder form-group">
+                        <div class="form-floating mb-3">
+                            <input class="stats form-control" id="dexterity" type="number" placeholder="dexterity" />
                             <label for="dexterity">Dexterity:</label>
-                            <input class="stats" id="dexterity" type="number" placeholder="dexterity" />
-                            <label for="dexterity" id="dexterity-label"></label>
+                            <p for="dexterity" id="dexterity-label"></p>
                         </div>
-                        <div class="stat-holder form-group">
-                            <label for="constitution">Constitution:</label>
-                            <input class="stats" id="constitution" type="number" placeholder="constitution" />
-                            <label for="constitution" id="constitution-label"></label>
+                        <div class="form-floating mb-3">
+                            <input class="stats form-control" id="constitution" type="number" placeholder="constitution" />
+                            <label for="floatingInput">Constitution:</label>
+                            <p for="constitution" id="constitution-label"></p>
                         </div>
-                        <div class="stat-holder form-group">
-                            <label for="intelligence">Intelligence:</label>
-                            <input class="stats" id="intelligence" type="number" placeholder="intelligence" />
-                            <label for="intelligence" id="intelligence-label"></label>
+                        <div class="form-floating mb-3">
+                            <input class="stats form-control" id="intelligence" type="number" placeholder="intelligence" />
+                            <label for="floatingInput">Intelligence:</label>
+                            <p for="intelligence" id="intelligence-label"></p>
                         </div>
-                        <div class="stat-holder form-group">
-                            <label for="wisdom">Wisdom:</label>
-                            <input class="stats" id="wisdom" type="number" placeholder="wisdom" />
-                            <label for="wisdom" id="wisdom-label"></label>
+                        <div class="form-floating mb-3">
+                            <input class="stats form-control" id="wisdom" type="number" placeholder="wisdom" />
+                            <label for="floatingInput">Wisdom:</label>
+                            <p for="wisdom" id="wisdom-label"></p>
                         </div>
-                        <div class="stat-holder form-group">
-                            <label for="charisma">Charisma:</label>
-                            <input class="stats" id="charisma" type="number" placeholder="charisma" />
-                            <label for="charisma" id="charisma-label"></label>
+                        <div class="form-floating mb-3">
+                            <input class="stats form-control" id="charisma" type="number" placeholder="charisma" />
+                            <label for="floatingInput">Charisma:</label>
+                            <p for="charisma" id="charisma-label"></p>
                         </div>
                     </div>
                 </div>
-                <div class="col-12 d-flex justify-content-center">
+                <div class="col-12 d-flex justify-content-center submit-btn">
                     <button class="btn" type="submit">Update Character</button>
                 </div>
             </form>

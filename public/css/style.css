@@ -132,6 +132,15 @@ button {
     margin-left: 16px;
 }
 
+.form-spacing {
+    justify-content: space-around;
+}
+
+.submit-btn {
+    margin-top: 20px;
+}
+
+
 .login-card,
 #character-creation-form,
 #character-view-form {
