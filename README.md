@@ -1,5 +1,7 @@
 # 8-1-project-2
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 ## Description
 
 Character Tracker for dungeon masters playing Dungeons & Dragons. This application lets you log in and store an assortment of basic NPC info that you can quickly pull up and access during a game. You can also quickly auto generate and update old characters at the press of a button.
