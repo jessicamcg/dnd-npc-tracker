@@ -18,7 +18,7 @@ Live [link](https://dnd-dm-character-tracker.herokuapp.com/) on Heroku
 
 -   [jasonluxie](https://github.com/jasonluxie)
 -   [jessicamcg](https://github.com/jessicamcg)
--   [BossyLemon0](https://github.com/jessicamcgBossyLemon0)
+-   [BossyLemon0](https://github.com/BossyLemon0)
 
 ## Resources
 
