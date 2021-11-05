@@ -8,6 +8,16 @@ Character Tracker for dungeon masters playing Dungeons & Dragons. This applicati
 
 Live [link](https://dnd-dm-character-tracker.herokuapp.com/) on Heroku
 
+## Demo
+
+![Gif showing character creation, viewing, and updating. Also shows dice roller functionality.](./public/images/project-2-dnd-char-tracker.gif)
+
+## Contributors
+
+-   [jasonluxie](https://github.com/jasonluxie)
+-   [jessicamcg](https://github.com/jessicamcg)
+-   [BossyLemon0](https://github.com/jessicamcgBossyLemon0)
+
 ## Resources
 
 ### Images
@@ -19,9 +29,31 @@ Live [link](https://dnd-dm-character-tracker.herokuapp.com/) on Heroku
 
 -   [Bootstrap](https://getbootstrap.com/docs/5.1/getting-started/introduction/)
 
-## Instructions
+## Development Instructions
 
 1. Change .env.EXAMPLE from placeholders to your mysql username and password.
+1. Rename .env.EXAMPLE file to .env
+1. Create and seed database
+
+### Package Installation
+
+```
+npm i
+```
+
+If missing package.json
+
+```
+npm i bcrypt
+npm i connect-session-sequelize
+npm i dotenv
+npm i express
+npm i express-handlebars
+npm i express-session
+npm i mysql2
+npm i rpg-dice-roller
+npm i sequelize
+```
 
 ## Further Development
 
