@@ -78,3 +78,5 @@ npm i sequelize
 
 -   Sorting cards by race, class, stats
 -   Filtering cards by race, class, stats
+-   Filtering by session or game
+-   Character deletion or death
