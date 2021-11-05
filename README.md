@@ -1,5 +1,7 @@
 # 8-1-project-2
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 ## Description
 
 Character Tracker for dungeon masters playing Dungeons & Dragons. This application lets you log in and store an assortment of basic NPC info that you can quickly pull up and access during a game. You can also quickly auto generate and update old characters at the press of a button.
@@ -7,6 +9,16 @@ Character Tracker for dungeon masters playing Dungeons & Dragons. This applicati
 ## Deployment
 
 Live [link](https://dnd-dm-character-tracker.herokuapp.com/) on Heroku
+
+## Demo
+
+![Gif showing character creation, viewing, and updating. Also shows dice roller functionality.](./public/images/project-2-dnd-char-tracker.gif)
+
+## Contributors
+
+-   [jasonluxie](https://github.com/jasonluxie)
+-   [jessicamcg](https://github.com/jessicamcg)
+-   [BossyLemon0](https://github.com/BossyLemon0)
 
 ## Resources
 
@@ -19,15 +31,33 @@ Live [link](https://dnd-dm-character-tracker.herokuapp.com/) on Heroku
 
 -   [Bootstrap](https://getbootstrap.com/docs/5.1/getting-started/introduction/)
 
-## Instructions
+## Development Instructions
 
 1. Change .env.EXAMPLE from placeholders to your mysql username and password.
+1. Rename .env.EXAMPLE file to .env
+1. Create and seed database
+
+### Package Installation
+
+```
+npm i
+```
+
+If missing package.json
+
+```
+npm i bcrypt
+npm i connect-session-sequelize
+npm i dotenv
+npm i express
+npm i express-handlebars
+npm i express-session
+npm i mysql2
+npm i rpg-dice-roller
+npm i sequelize
+```
 
 ## Further Development
-
-### Dice Limit
-
--   Need to add a realistice dice limit
 
 ### Username Validation
 
@@ -48,3 +78,5 @@ Live [link](https://dnd-dm-character-tracker.herokuapp.com/) on Heroku
 
 -   Sorting cards by race, class, stats
 -   Filtering cards by race, class, stats
+-   Filtering by session or game
+-   Character deletion or death

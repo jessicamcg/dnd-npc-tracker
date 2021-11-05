@@ -95,7 +95,7 @@ aside {
     display: flex;
     flex-wrap: wrap;
     align-content: center;
-    /* justify-content: center; */
+    justify-content: center;
 }
 
 .dice-roller_header {
@@ -103,18 +103,20 @@ aside {
 }
 
 .dice-roller_number {
-    width: 70%;
+    width: 90%;
 }
 
 .dice-roller_type {
     width: 25%;
 }
+
 .dice-roller-button {
-    width:100%
+    width: 82%
 }
+
 .dice-roller_results,
 .dice-roller_options {
-    width: 100%;
+    /* width: 100%; */
 }
 
 .dice-roller_results {
@@ -159,6 +161,15 @@ button {
     margin-left: 16px;
 }
 
+.form-spacing {
+    justify-content: space-around;
+}
+
+.submit-btn {
+    margin-top: 20px;
+}
+
+
 .login-card,
 #character-creation-form,
 #character-view-form {
@@ -190,40 +201,52 @@ button {
     display: flex;
 }
 
+#notes {
+    height: 200px;
+}
+
 #login-div {
     background: var(--dungeon);
     background-size: cover;
-    height: 120vh;
+    height: 100%;
+    width: 100%;
 }
 
 #signup-div {
     background: var(--red-dragon);
     background-size: cover;
     height: 120vh;
+    height: 100%;
+    width: 100%;
 }
 
 #create-div {
     background: var(--bard);
     background-size: cover;
     height: 120vh;
+    height: 100%;
+    width: 100%;
 }
 
 #view-div {
     background: var(--purgatory);
     background-size: cover;
     height: 120vh;
+    height: 100%;
+    width: 100%;
+}
+
+#my-char-div {
+    background: var(--witch-house);
+    height: 100%;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
 }
 
 .my-characters {
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: -100px;
-    background: var(--witch-house);
-    background-size: cover;
-    height: 120vh;
     padding-top: 100px;
-    justify-content: center;
-    align-content: center;
 }
 
 .menu-card {
@@ -273,15 +296,4 @@ button {
         padding: 0.5rem 1rem;
     }
 
-    aside {
-        float: top;
-        position: relative !important;
-        display: flex;
-        align-items: center;
-        justify-content: space-around;
-    }
-
-    .character-gallery {
-        width: 100vh;
-    }
 }
